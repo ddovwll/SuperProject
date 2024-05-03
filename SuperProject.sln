@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperAPI", "SuperAPI\SuperAPI.csproj", "{A7578D93-6A80-40A2-9394-AEC4B29DFBAD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7E1D0CE1-3898-41A3-A914-6E428ABA601D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperClient", "SuperClient\SuperClient.csproj", "{25C980F8-1B5B-40A3-BBD6-F637380F4739}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7578D93-6A80-40A2-9394-AEC4B29DFBAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7578D93-6A80-40A2-9394-AEC4B29DFBAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7578D93-6A80-40A2-9394-AEC4B29DFBAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7578D93-6A80-40A2-9394-AEC4B29DFBAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{25C980F8-1B5B-40A3-BBD6-F637380F4739}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{25C980F8-1B5B-40A3-BBD6-F637380F4739}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{25C980F8-1B5B-40A3-BBD6-F637380F4739}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{25C980F8-1B5B-40A3-BBD6-F637380F4739}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

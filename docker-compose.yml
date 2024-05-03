@@ -1,0 +1,6 @@
+﻿services:
+  superapi:
+    image: superapi
+    build:
+      context: .
+      dockerfile: SuperAPI/Dockerfile
