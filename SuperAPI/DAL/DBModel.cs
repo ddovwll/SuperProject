@@ -12,4 +12,5 @@ public class DBModel : DbContext
     
     public DbSet<Post> Posts { get; set; }
     public DbSet<User> Users { get; set; }
+    public DbSet<Likes> Likes { get; set; }
 }

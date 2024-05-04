@@ -1,4 +1,6 @@
-﻿namespace SuperAPI.DAL.Models;
+﻿using Microsoft.Extensions.Options;
+
+namespace SuperAPI.DAL.Models;
 
 public class User
 {
@@ -7,5 +9,11 @@ public class User
     public string Password { get; set; }
     public string Salt { get; set; }
     public string Photo { get; set; }
-    public List<Post> LikedPosts { get; set; } = new();
+    
+    public bool Validate()
+    {
+        if (string.IsNullOrWhiteSpace(NickName) || string.IsNullOrWhiteSpace(Password))
+            return false;
+        return true;
+    }
 }

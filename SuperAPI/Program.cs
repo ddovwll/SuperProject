@@ -9,6 +9,7 @@ public class Program
     {
         using var db = new DBModel();
         
+        db.Database.EnsureDeleted();
         db.Database.EnsureCreated();
         
         var builder = WebApplication.CreateBuilder(args);
@@ -17,6 +18,8 @@ public class Program
 
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        builder.Services.AddControllers();
 
         builder.Services.AddSingleton<IUserDAL, UserDAL>();
         builder.Services.AddScoped<IUserBLL, UserBLL>();
@@ -31,7 +34,11 @@ public class Program
 
         app.UseHttpsRedirection();
 
+        app.UseRouting();
+
         app.UseAuthorization();
+        
+        app.UseEndpoints(endpoints => { endpoints.MapControllers();});
         
         app.Run();
     }
