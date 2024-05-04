@@ -25,4 +25,14 @@ public class UserDAL : IUserDAL
         var user = await db.Users.FirstOrDefaultAsync(u => u.NickName == name) ?? new User();
         return user;
     }
+
+    public async Task UpdateUser(User user)
+    {
+        await Task.Run(async () =>
+        {
+            await using var db = new DBModel();
+            db.Users.Update(user);
+            await db.SaveChangesAsync();
+        });
+    }
 }

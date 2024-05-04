@@ -23,6 +23,7 @@ public class Program
 
         builder.Services.AddSingleton<IUserDAL, UserDAL>();
         builder.Services.AddScoped<IUserBLL, UserBLL>();
+        builder.Services.AddScoped<IAuth, Auth>();
 
         var app = builder.Build();
 

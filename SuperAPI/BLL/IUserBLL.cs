@@ -6,4 +6,5 @@ public interface IUserBLL
 {
     Task CreateUser(User user);
     Task<User> GetUserById(int id);
+    Task<string> Login(User user);
 }

@@ -17,9 +17,25 @@ public class UserBLL(IUserDAL userDAL) : IUserBLL
         IEncrypt encrypt = new Encrypt();
         user.Salt = Guid.NewGuid().ToString();
         user.Password = encrypt.HashPassword(user.Password, user.Salt);
+        user.SessionId = 0.ToString();
         //TODO допилить фотки и убрать сраку снизу
         user.Photo = "qwew";
         await userDAL.CreateUser(user);
+    }
+
+    public async Task<string> Login(User user)
+    {
+        if (user == null || !user.Validate())
+            throw new UserDataException(Constants.InvalidData);
+        var modelFromDb = await userDAL.GetUserByName(user.NickName);
+        if (modelFromDb.Id == 0)
+            throw new NotFoundException(Constants.NotFound);
+        IEncrypt encrypt = new Encrypt();
+        if (modelFromDb.Password != encrypt.HashPassword(user.Password, modelFromDb.Salt))
+            throw new UserDataException(Constants.InvalidData);
+        modelFromDb.SessionId = Guid.NewGuid().ToString();
+        await userDAL.UpdateUser(modelFromDb);
+        return modelFromDb.SessionId;
     }
 
     public async Task<User> GetUserById(int id)

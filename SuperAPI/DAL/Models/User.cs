@@ -9,6 +9,7 @@ public class User
     public string Password { get; set; }
     public string Salt { get; set; }
     public string Photo { get; set; }
+    public string SessionId { get; set; }
     
     public bool Validate()
     {

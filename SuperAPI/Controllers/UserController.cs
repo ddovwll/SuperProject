@@ -7,8 +7,7 @@ using SuperAPI.DAL.QueryModels;
 
 namespace SuperAPI.Controllers;
 
-[Route("/user")]
-public class UserController(IUserBLL userBll) : ControllerBase
+public class UserController(IUserBLL userBll, IAuth auth) : ControllerBase
 {
     [HttpPost("/register")]
     public async Task<IActionResult> Register([FromBody] RegistrationQueryModel user)
@@ -29,9 +28,39 @@ public class UserController(IUserBLL userBll) : ControllerBase
         return Ok();
     }
 
-    [HttpGet("/{id:int}")]
+    [HttpPost("/login")]
+    public async Task<IActionResult> Login([FromBody] RegistrationQueryModel user)
+    {
+        string sessionId;
+
+        try
+        {
+            sessionId = await userBll.Login(RegistrationQMToUserModel.Map(user));
+        }
+        catch (UserDataException ex)
+        {
+            return BadRequest(ex.Message);
+        }
+        catch (NotFoundException ex)
+        {
+            return NotFound(ex.Message);
+        }
+
+        return Ok(sessionId);
+    }
+
+    [HttpGet("/user/{id:int}")]
     public async Task<IActionResult> GetUserById(int id)
     {
+        try
+        {
+            await auth.CheckSession(Request.Headers["UserId"], Request.Headers["SessionId"]);
+        }
+        catch (UnAuthException ex)
+        {
+            return Unauthorized(ex.Message);
+        }
+        
         User user;
         try
         {
