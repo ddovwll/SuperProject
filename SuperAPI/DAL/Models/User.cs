@@ -7,6 +7,5 @@ public class User
     public string Password { get; set; }
     public string Salt { get; set; }
     public string Photo { get; set; }
-    public List<Post> Posts { get; set; } = new List<Post>();
-    public List<int> LikedPosts { get; set; } = new List<int>();
+    public List<Post> LikedPosts { get; set; } = new();
 }

@@ -1,9 +1,15 @@
+using SuperAPI.DAL;
+
 namespace SuperAPI;
 
 public class Program
 {
     public static void Main(string[] args)
     {
+        using var db = new DBModel();
+        
+        db.Database.EnsureCreated();
+        
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddAuthorization();
