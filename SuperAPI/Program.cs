@@ -1,3 +1,4 @@
+using SuperAPI.BLL;
 using SuperAPI.DAL;
 
 namespace SuperAPI;
@@ -16,6 +17,9 @@ public class Program
 
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
+
+        builder.Services.AddSingleton<IUserDAL, UserDAL>();
+        builder.Services.AddScoped<IUserBLL, UserBLL>();
 
         var app = builder.Build();
 

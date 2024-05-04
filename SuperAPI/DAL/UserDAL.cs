@@ -15,7 +15,14 @@ public class UserDAL : IUserDAL
     public async Task<User> GetUserById(int id)
     {
         await using var db = new DBModel();
-        var user = await db.Users.FirstOrDefaultAsync(x => x.Id == id) ?? new User();
+        var user = await db.Users.FindAsync(id) ?? new User();
+        return user;
+    }
+    
+    public async Task<User> GetUserByName(string name)
+    {
+        await using var db = new DBModel();
+        var user = await db.Users.FirstOrDefaultAsync(u => u.NickName == name) ?? new User();
         return user;
     }
 }
