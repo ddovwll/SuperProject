@@ -7,4 +7,9 @@ public class Post
     public string Text { get; set; }
     public int UserId { get; set; }
     public User User { get; set; }
+
+    public bool Validate()
+    {
+        return !string.IsNullOrWhiteSpace(Header) && !string.IsNullOrWhiteSpace(Text);
+    }
 }

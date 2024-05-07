@@ -39,7 +39,7 @@ public class PostDAL : IPostDAL
         return post;
     }
 
-    public async Task<List<Post>> GetPosts(int from = 0)
+    public async Task<List<Post>> GetPosts(int from)
     {
         await using var db = new DBModel();
         var posts = new List<Post>();
