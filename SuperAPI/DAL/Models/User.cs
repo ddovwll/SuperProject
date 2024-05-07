@@ -8,7 +8,6 @@ public class User
     public string NickName { get; set; }
     public string Password { get; set; }
     public string Salt { get; set; }
-    public string Photo { get; set; }
     public string SessionId { get; set; }
     
     public bool Validate()

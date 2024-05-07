@@ -18,8 +18,6 @@ public class UserBLL(IUserDAL userDAL) : IUserBLL
         user.Salt = Guid.NewGuid().ToString();
         user.Password = encrypt.HashPassword(user.Password, user.Salt);
         user.SessionId = 0.ToString();
-        //TODO допилить фотки и убрать сраку снизу
-        user.Photo = "qwew";
         await userDAL.CreateUser(user);
     }
 

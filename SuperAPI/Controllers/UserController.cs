@@ -41,7 +41,7 @@ public class UserController(IUserBLL userBll, IAuth auth) : ControllerBase
         {
             return BadRequest(ex.Message);
         }
-        catch (NotFoundException ex)
+        catch (NotFoundException ex) 
         {
             return NotFound(ex.Message);
         }
