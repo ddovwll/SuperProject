@@ -39,19 +39,10 @@ public class PostDAL : IPostDAL
         return post;
     }
 
-    public async Task<List<Post>> GetPosts(int from)
+    public async Task<List<Post>> GetPosts()
     {
         await using var db = new DBModel();
-        var posts = new List<Post>();
-        await Task.Run(async () =>
-        {
-            from = from != 0 ? from : db.Posts.Last().Id;
-            for (int i = from; i > from - 10; i--)
-            {
-                var post = await GetPostById(i);
-                posts.Add(post);
-            }
-        });
+        var posts = await db.Posts.ToListAsync();
         return posts;
     }
 

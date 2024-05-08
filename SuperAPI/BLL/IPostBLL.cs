@@ -7,8 +7,8 @@ public interface IPostBLL
 {
     Task CreatePost(Post post, StringValues userId, StringValues sessionId);
     Task DeletePost(int id, StringValues userId, StringValues sessionId);
-    Task UpdatePost(Post post);
-    Task<Post> GetPostById(int id);
-    Task<List<Post>> GetPosts(int from);
-    Task<List<Post>> GetPostsByUser(string nickname);
+    Task UpdatePost(Post post, StringValues userId, StringValues sessionId);
+    Task<Post> GetPostById(int id, StringValues userId, StringValues sessionId);
+    Task<List<Post>> GetPosts(StringValues userId, StringValues sessionId);
+    Task<List<Post>> GetPostsByUser(string nickname, StringValues userId, StringValues sessionId);
 }

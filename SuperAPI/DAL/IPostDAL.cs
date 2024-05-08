@@ -8,6 +8,6 @@ public interface IPostDAL
     Task DeletePost(int id);
     Task UpdatePost(Post post);
     Task<Post> GetPostById(int id);
-    Task<List<Post>> GetPosts(int from);
+    Task<List<Post>> GetPosts();
     Task<List<Post>> GetPostsByUser(string nickname);
 }
