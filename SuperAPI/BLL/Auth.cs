@@ -14,4 +14,11 @@ public class Auth (IUserDAL userDal) : IAuth
         if (sessionId != modelFromDb.SessionId)
             throw new UnAuthException(Constants.Unauthorized);
     }
+
+    public async Task CheckPost(StringValues userId, StringValues sessionId, int postOwnerId)
+    {
+        await CheckSession(userId, sessionId);
+        if (postOwnerId != int.Parse(userId.ToString()))
+            throw new UnAuthException(Constants.Unauthorized);
+    }
 }

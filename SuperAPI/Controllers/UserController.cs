@@ -76,6 +76,7 @@ public class UserController(IUserBLL userBll, IAuth auth) : ControllerBase
             Id = user.Id,
             NickName = user.NickName
         };
+        
         return Ok(responseModel);
     }
 }
