@@ -43,4 +43,12 @@ public class UserBLL(IUserDAL userDAL) : IUserBLL
             throw new NotFoundException(Constants.NotFound);
         return userFromDb;
     }
+
+    public async Task<User> GetUserByName(string name)
+    {
+        var userFromDb = await userDAL.GetUserByName(name);
+        if(userFromDb.Id == 0)
+            throw new NotFoundException(Constants.NotFound);
+        return userFromDb;
+    }
 }

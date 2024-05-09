@@ -32,10 +32,12 @@ public class UserController(IUserBLL userBll, IAuth auth) : ControllerBase
     public async Task<IActionResult> Login([FromBody] RegistrationQueryModel user)
     {
         string sessionId;
+        User userFromDb;
 
         try
         {
             sessionId = await userBll.Login(RegistrationQMToUserModel.Map(user));
+            userFromDb = await userBll.GetUserByName(user.NickName);
         }
         catch (UserDataException ex)
         {
@@ -46,7 +48,13 @@ public class UserController(IUserBLL userBll, IAuth auth) : ControllerBase
             return NotFound(ex.Message);
         }
 
-        return Ok(sessionId);
+        var responseModel = new
+        {
+            UserId = userFromDb.Id,
+            SessionId = sessionId
+        };
+        
+        return Ok(responseModel);
     }
 
     [HttpGet("/user/{id:int}")]
