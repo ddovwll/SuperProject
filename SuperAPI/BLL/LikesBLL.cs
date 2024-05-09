@@ -24,7 +24,7 @@ public class LikesBLL(ILikesDAL likesDal, IAuth auth) : ILikesBLL
         await likesDal.RemoveLike(int.Parse(userId), postId);
     }
 
-    public async Task<List<Post>> GetLikedPosts(int postId, StringValues userId, StringValues sessionId)
+    public async Task<List<Post>> GetLikedPosts(StringValues userId, StringValues sessionId)
     {
         await auth.CheckSession(userId, sessionId);
         var posts = await likesDal.GetLikedPosts(int.Parse(userId));
