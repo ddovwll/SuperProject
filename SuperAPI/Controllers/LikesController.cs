@@ -38,6 +38,10 @@ public class LikesController(ILikesBLL likesBll) : ControllerBase
         {
             return Unauthorized(e.Message);
         }
+        catch (Exception e)
+        {
+            return Conflict();
+        }
 
         return Ok();
     }

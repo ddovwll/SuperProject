@@ -9,6 +9,7 @@ public class PostQMToPost
     {
         return new Post()
         {
+            Id = queryModel.Id,
             Header = queryModel.Header,
             Text = queryModel.Text,
             LikesCount = queryModel.LikesCount,
