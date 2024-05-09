@@ -8,15 +8,20 @@ public class LikesDAL : ILikesDAL
     public async Task AddLike(Likes like)
     {
         await using var db = new DBModel();
+        var post = await db.Posts.FindAsync(like.PostId);
+        post.LikesCount++;
         await db.Likes.AddAsync(like);
         await db.SaveChangesAsync();
     }
 
-    public async Task RemoveLike(Likes like)
+    public async Task RemoveLike(int userId, int postId)
     {
         await Task.Run(async () =>
         {
             await using var db = new DBModel();
+            var post = await db.Posts.FindAsync(postId);
+            post.LikesCount--;
+            var like = await db.Likes.FindAsync(userId, postId);
             db.Likes.Remove(like);
             await db.SaveChangesAsync();
         });
