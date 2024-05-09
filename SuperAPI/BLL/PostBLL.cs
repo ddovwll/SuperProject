@@ -2,6 +2,7 @@
 using SuperAPI.BLL.Exceptions;
 using SuperAPI.DAL;
 using SuperAPI.DAL.Models;
+using SuperAPI.DAL.QueryModels;
 
 namespace SuperAPI.BLL;
 
@@ -44,19 +45,35 @@ public class PostBLL(IPostDAL postDal, IAuth auth) : IPostBLL
         return postFromDb;
     }
 
-    public async Task<List<Post>> GetPosts(StringValues userId, StringValues sessionId)
+    public async Task<List<PostQueryModel>> GetPosts(StringValues userId, StringValues sessionId)
     {
         await auth.CheckSession(userId, sessionId);
         var postsFromDb = await postDal.GetPosts();
-        return postsFromDb;
+        var posts = postsFromDb.Select(p => new PostQueryModel()
+        {
+            Id = p.Id,
+            Header = p.Header,
+            Text = p.Text,
+            LikesCount = p.LikesCount,
+            UserId = p.UserId
+        }).ToList();
+        return posts;
     }
 
-    public async Task<List<Post>> GetPostsByUser(string nickname, StringValues userId, StringValues sessionId)
+    public async Task<List<PostQueryModel>> GetPostsByUser(string nickname, StringValues userId, StringValues sessionId)
     {
         await auth.CheckSession(userId, sessionId);
         if(string.IsNullOrWhiteSpace(nickname))
             throw new PostDataException(Constants.InvalidData);
         var postsFromDb = await postDal.GetPostsByUser(nickname);
-        return postsFromDb;
+        var posts = postsFromDb.Select(p => new PostQueryModel()
+        {
+            Id = p.Id,
+            Header = p.Header,
+            Text = p.Text,
+            LikesCount = p.LikesCount,
+            UserId = p.UserId
+        }).ToList();
+        return posts;
     }
 }

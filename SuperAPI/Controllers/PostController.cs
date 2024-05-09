@@ -2,18 +2,21 @@
 using Microsoft.AspNetCore.Mvc;
 using SuperAPI.BLL;
 using SuperAPI.BLL.Exceptions;
+using SuperAPI.BLL.Mappers;
 using SuperAPI.DAL.Models;
+using SuperAPI.DAL.QueryModels;
 
 namespace SuperAPI.Controllers;
 
 public class PostController(IPostBLL postBll) : ControllerBase
 {
     [HttpPost("/post/create")]
-    public async Task<IActionResult> CreatePost([FromBody] Post post)
+    public async Task<IActionResult> CreatePost([FromBody] PostQueryModel post)
     {
         try
         {
-            await postBll.CreatePost(post, Request.Headers["UserId"], Request.Headers["SessionId"]);
+            var postModel = PostQMToPost.Map(post);
+            await postBll.CreatePost(postModel, Request.Headers["UserId"], Request.Headers["SessionId"]);
         }
         catch (UnAuthException e)
         {
@@ -47,11 +50,12 @@ public class PostController(IPostBLL postBll) : ControllerBase
     }
 
     [HttpPut("/post/update")]
-    public async Task<IActionResult> UpdatePost([FromBody] Post post)
+    public async Task<IActionResult> UpdatePost([FromBody] PostQueryModel post)
     {
         try
         {
-            await postBll.UpdatePost(post, Request.Headers["UserId"], Request.Headers["SessionId"]);
+            var postModel = PostQMToPost.Map(post);
+            await postBll.UpdatePost(postModel, Request.Headers["UserId"], Request.Headers["SessionId"]);
         }
         catch (UnAuthException e)
         {
@@ -87,6 +91,7 @@ public class PostController(IPostBLL postBll) : ControllerBase
             Id = postFromDb.Id,
             Header = postFromDb.Header,
             Text = postFromDb.Text,
+            LikesCount = postFromDb.LikesCount,
             UserId = postFromDb.UserId
         };
 
@@ -96,7 +101,7 @@ public class PostController(IPostBLL postBll) : ControllerBase
     [HttpGet("/post/all")]
     public async Task<IActionResult> GetPosts()
     {
-        List<Post> posts;
+        List<PostQueryModel> posts;
         try
         {
             posts = await postBll.GetPosts(Request.Headers["UserId"], Request.Headers["SessionId"]);
@@ -112,7 +117,7 @@ public class PostController(IPostBLL postBll) : ControllerBase
     [HttpGet("/post/user/{nickname}")]
     public async Task<IActionResult> GetPostsByUser(string nickname)
     {
-        List<Post> posts;
+        List<PostQueryModel> posts;
         try
         {
             posts = await postBll.GetPostsByUser(nickname, Request.Headers["UserId"], Request.Headers["SessionId"]);

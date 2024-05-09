@@ -2,6 +2,7 @@
 using SuperAPI.BLL;
 using SuperAPI.BLL.Exceptions;
 using SuperAPI.DAL.Models;
+using SuperAPI.DAL.QueryModels;
 
 namespace SuperAPI.Controllers;
 
@@ -44,7 +45,7 @@ public class LikesController(ILikesBLL likesBll) : ControllerBase
     [HttpGet("/likes")]
     public async Task<IActionResult> GetLikedPosts()
     {
-        List<Post> likedPosts;
+        List<PostQueryModel> likedPosts;
         try
         {
             likedPosts = await likesBll.GetLikedPosts(Request.Headers["UserId"], Request.Headers["SessionId"]);
