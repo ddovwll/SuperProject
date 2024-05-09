@@ -121,7 +121,7 @@ public class PostController(IPostBLL postBll) : ControllerBase
         {
             return Unauthorized(e.Message);
         }
-        catch (PostDataException e)
+        catch (PostDataException e) 
         {
             return BadRequest(e.Message);
         }

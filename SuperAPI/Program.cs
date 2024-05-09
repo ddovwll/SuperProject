@@ -26,6 +26,7 @@ public class Program
         builder.Services.AddScoped<IAuth, Auth>();
         builder.Services.AddSingleton<IPostDAL, PostDAL>();
         builder.Services.AddScoped<IPostBLL, PostBLL>();
+        builder.Services.AddSingleton<ILikesDAL, LikesDAL>();
 
         var app = builder.Build();
 

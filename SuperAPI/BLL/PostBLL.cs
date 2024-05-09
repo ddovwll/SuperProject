@@ -31,6 +31,7 @@ public class PostBLL(IPostDAL postDal, IAuth auth) : IPostBLL
         if (!post.Validate())
             throw new PostDataException(Constants.InvalidData);
         post.UserId = postFromDb.UserId;
+        post.LikesCount = postFromDb.LikesCount;
         await postDal.UpdatePost(post);
     }
 
