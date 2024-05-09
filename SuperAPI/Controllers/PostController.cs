@@ -13,9 +13,10 @@ public class PostController(IPostBLL postBll) : ControllerBase
     [HttpPost("/post/create")]
     public async Task<IActionResult> CreatePost([FromBody] PostQueryModel post)
     {
+        Post postModel;
         try
         {
-            var postModel = PostQMToPost.Map(post);
+            postModel = PostQMToPost.Map(post);
             await postBll.CreatePost(postModel, Request.Headers["UserId"], Request.Headers["SessionId"]);
         }
         catch (UnAuthException e)
@@ -26,8 +27,17 @@ public class PostController(IPostBLL postBll) : ControllerBase
         {
             return BadRequest(e.Message);
         }
+
+        var responseModel = new
+        {
+            Id = postModel.Id,
+            Heder = postModel.Header,
+            Text = postModel.Text,
+            Likes = postModel.LikesCount,
+            UserId = postModel.UserId
+        };
         
-        return Ok();
+        return Ok(responseModel);
     }
 
     [HttpDelete("/post/delete/{id:int}")]
@@ -52,9 +62,11 @@ public class PostController(IPostBLL postBll) : ControllerBase
     [HttpPut("/post/update")]
     public async Task<IActionResult> UpdatePost([FromBody] PostQueryModel post)
     {
+        Post postModel;
+        
         try
         {
-            var postModel = PostQMToPost.Map(post);
+            postModel = PostQMToPost.Map(post);
             await postBll.UpdatePost(postModel, Request.Headers["UserId"], Request.Headers["SessionId"]);
         }
         catch (UnAuthException e)
@@ -65,8 +77,17 @@ public class PostController(IPostBLL postBll) : ControllerBase
         {
             return BadRequest(e.Message);
         }
+        
+        var responseModel = new
+        {
+            Id = postModel.Id,
+            Header = postModel.Header,
+            Text = postModel.Text,
+            LikesCount = postModel.LikesCount,
+            UserId = postModel.UserId
+        };
 
-        return Ok();
+        return Ok(responseModel);
     }
 
     [HttpGet("/post/{id:int}")]

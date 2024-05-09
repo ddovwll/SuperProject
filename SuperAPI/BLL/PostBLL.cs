@@ -56,7 +56,7 @@ public class PostBLL(IPostDAL postDal, IAuth auth) : IPostBLL
             Text = p.Text,
             LikesCount = p.LikesCount,
             UserId = p.UserId
-        }).ToList();
+        }).OrderByDescending(p=>p.Id).ToList();
         return posts;
     }
 
