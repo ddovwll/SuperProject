@@ -1,21 +1,36 @@
+using SuperAPI.BLL;
+using SuperAPI.DAL;
+
 namespace SuperAPI;
 
 public class Program
 {
     public static void Main(string[] args)
     {
+        /*using var db = new DBModel();
+        
+        db.Database.EnsureDeleted();
+        db.Database.EnsureCreated();*/
+        
         var builder = WebApplication.CreateBuilder(args);
 
-        // Add services to the container.
         builder.Services.AddAuthorization();
 
-        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
+        builder.Services.AddControllers();
+
+        builder.Services.AddSingleton<IUserDAL, UserDAL>();
+        builder.Services.AddScoped<IUserBLL, UserBLL>();
+        builder.Services.AddScoped<IAuth, Auth>();
+        builder.Services.AddSingleton<IPostDAL, PostDAL>();
+        builder.Services.AddScoped<IPostBLL, PostBLL>();
+        builder.Services.AddSingleton<ILikesDAL, LikesDAL>();
+        builder.Services.AddScoped<ILikesBLL, LikesBLL>();
+
         var app = builder.Build();
 
-        // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
             app.UseSwagger();
@@ -24,28 +39,12 @@ public class Program
 
         app.UseHttpsRedirection();
 
+        app.UseRouting();
+
         app.UseAuthorization();
-
-        var summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
-
-        app.MapGet("/weatherforecast", (HttpContext httpContext) =>
-            {
-                var forecast = Enumerable.Range(1, 5).Select(index =>
-                        new WeatherForecast
-                        {
-                            Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                            TemperatureC = Random.Shared.Next(-20, 55),
-                            Summary = summaries[Random.Shared.Next(summaries.Length)]
-                        })
-                    .ToArray();
-                return forecast;
-            })
-            .WithName("GetWeatherForecast")
-            .WithOpenApi();
-
+        
+        app.UseEndpoints(endpoints => { endpoints.MapControllers();});
+        
         app.Run();
     }
 }
