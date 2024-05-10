@@ -1,5 +1,6 @@
 ﻿using SuperClient.models;
 using SuperClient.presenters;
+using SuperClient.utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,13 +28,21 @@ namespace SuperClient.views
         {
             await presenter.Authorization(textBoxName.Text, textBoxPassword.Text);
             var _headers = headers.header;
-            MessageBox.Show(presenter.resultAuth);
             if (presenter.resultAuth == "ok")
             {
+                MessageBox.Show("Вы выполнили вход в аккаунт nickname: " + textBoxName.Text);
+                MessageBox.Show(_headers.sessionId);
                 mainMenu menu = new mainMenu();
                 menu.Show();
                 this.Hide();
             }
+            else
+            {
+                MessageBox.Show(presenter.resultAuth);
+                textBoxName.Clear();
+                textBoxPassword.Clear();
+            }
+
             //MessageBox.Show(_headers.sessionId);
         }
 
@@ -42,6 +51,11 @@ namespace SuperClient.views
             register formRegister = new register();
             formRegister.Show();
             this.Hide();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

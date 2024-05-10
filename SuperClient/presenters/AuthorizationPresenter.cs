@@ -42,10 +42,14 @@ namespace SuperClient.presenters
             switch (statusCode)
             {
                 case 400:
-                    result = "пустые или отсутствующие поля";
+                    result = "неверный логин или пароль";
                     // BadRequest
                     break;
                 case 409:
+                    result = "юзера с таким именем нет";
+                    //NotFound
+                    break;
+                case 404:
                     result = "юзера с таким именем нет";
                     //NotFound
                     break;
@@ -67,20 +71,7 @@ namespace SuperClient.presenters
                     // Обработка других кодов состояния
                     break;
             }
-
-            /*if (response.IsSuccessStatusCode)
-            {
-                var data = await response.Content.ReadAsStringAsync();
-
-                var _headerAuth = JsonConvert.DeserializeObject<headers>(data);
-                headers.header.userId = _headerAuth.userId;
-                headers.header.sessionId = _headerAuth.sessionId;
-            }*/
-
-            // Добавление заголовков для последующих запросов
-
-            httpClient.DefaultRequestHeaders.Add("userId", headers.header.userId.ToString());
-            httpClient.DefaultRequestHeaders.Add("sessionId", headers.header.sessionId.ToString());
+            
         }
     }
 }

@@ -13,8 +13,5 @@ namespace SuperClient.models
 
         public static headers header = new headers();
 
-
-
-
     }
 }

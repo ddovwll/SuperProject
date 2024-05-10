@@ -39,28 +39,19 @@ namespace SuperClient.presenters
             var content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
 
             // Отправка POST запроса на сервер
-            var response = await httpClient.PostAsync("http://localhost:5221/login", content);
+            var response = await httpClient.PostAsync("http://localhost:5221/register", content);
 
             int statusCode = (int)response.StatusCode;
             switch (statusCode)
             {
                 case 400:
-                    result = "пустые или отсутствующие поля";
+                    result = "неверный логин или пароль";
                     // BadRequest
                     break;
                 case 409:
                     result = "юзер с таким именем существует";
                     break;
                 case 200:
-                    // Получение данных из ответа
-                    var data = await response.Content.ReadAsStringAsync();
-
-                    // Десериализация JSON данных в объект headers
-                    var _headers = JsonConvert.DeserializeObject<headers>(data);
-
-                    // Сохранение данных сессии в заголовках для последующих запросов
-                    headers.header.sessionId = _headers.sessionId;
-                    headers.header.userId = _headers.userId;
                     result = "ok";
                     break;
                 // Другие возможные коды состояния...
@@ -70,27 +61,6 @@ namespace SuperClient.presenters
                     break;
             }
 
-            // Если запрос выполнен успешно
-            /*if (response.IsSuccessStatusCode == true)
-            {
-                // Получение данных из ответа
-                var data = await response.Content.ReadAsStringAsync();
-
-                // Десериализация JSON данных в объект headers
-                var _headers = JsonConvert.DeserializeObject<headers>(data);
-
-                // Сохранение данных сессии в заголовках для последующих запросов
-                headers.header.sessionId = _headers.sessionId;
-                headers.header.userId = _headers.userId;
-            }
-            else
-            {
-                result = "ошибкааа";
-            }
-            */
-            // Добавление заголовков userId и sessionId для последующих запросов
-            httpClient.DefaultRequestHeaders.Add("userId", headers.header.userId.ToString());
-            httpClient.DefaultRequestHeaders.Add("sessionId", headers.header.sessionId.ToString());
         }
     }
 }
