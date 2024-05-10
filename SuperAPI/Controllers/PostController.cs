@@ -113,7 +113,8 @@ public class PostController(IPostBLL postBll) : ControllerBase
             Header = postFromDb.Header,
             Text = postFromDb.Text,
             LikesCount = postFromDb.LikesCount,
-            UserId = postFromDb.UserId
+            UserId = postFromDb.UserId,
+            UserName = postFromDb.User.NickName
         };
 
         return Ok(post);

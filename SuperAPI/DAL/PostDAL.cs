@@ -35,21 +35,21 @@ public class PostDAL : IPostDAL
     public async Task<Post> GetPostById(int id)
     {
         await using var db = new DBModel();
-        var post = await db.Posts.FindAsync(id) ?? new Post();
+        var post = await db.Posts.Include("User").FirstOrDefaultAsync(p => p.Id == id) ?? new Post();
         return post;
     }
 
     public async Task<List<Post>> GetPosts()
     {
         await using var db = new DBModel();
-        var posts = await db.Posts.ToListAsync();
+        var posts = await db.Posts.Include("User").ToListAsync();
         return posts;
     }
 
     public async Task<List<Post>> GetPostsByUser(string nickname)
     {
         await using var db = new DBModel();
-        var posts = await db.Posts.Where(p=>p.User.NickName == nickname).ToListAsync();
+        var posts = await db.Posts.Include("User").Where(p=>p.User.NickName == nickname).ToListAsync();
         return posts;
     }
 }
