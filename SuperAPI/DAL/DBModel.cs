@@ -7,7 +7,7 @@ public class DBModel : DbContext
 {
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseNpgsql("Host=localhost;Port=32770;Database=SuperAPIDb;Username=User;Password=qwe123asd");
+        optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=SuperAPIDb;Username=postgres;Password=111hinata111");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
