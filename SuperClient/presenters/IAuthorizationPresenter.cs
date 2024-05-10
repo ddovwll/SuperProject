@@ -9,5 +9,6 @@ namespace SuperClient.presenters
     internal interface IAuthorizationPresenter
     {
         public Task Authorization(string nickname, string password);
+        public string resultAuth { get; set; }
     }
 }

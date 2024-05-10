@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace SuperClient.views
 {
@@ -26,12 +27,17 @@ namespace SuperClient.views
         {
             await presenter.Register(textBoxNickName.Text, textBoxPassword.Text);
             var _headers = headers.header;
-            MessageBox.Show(_headers.sessionId);
+            MessageBox.Show(presenter.resultRegistr);
+            if (presenter.resultRegistr == "ok")
+            {
+                mainMenu menu = new mainMenu();
+                menu.Show();
+                this.Hide();
+            }
         }
 
         private void register_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

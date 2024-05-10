@@ -56,6 +56,7 @@
             buttonAuthorization.TabIndex = 2;
             buttonAuthorization.Text = "войти";
             buttonAuthorization.UseVisualStyleBackColor = true;
+            buttonAuthorization.Click += buttonAuthorization_Click;
             // 
             // buttonRegister
             // 
@@ -65,6 +66,7 @@
             buttonRegister.TabIndex = 3;
             buttonRegister.Text = "регистрация";
             buttonRegister.UseVisualStyleBackColor = true;
+            buttonRegister.Click += buttonRegister_Click;
             // 
             // Authorization
             // 

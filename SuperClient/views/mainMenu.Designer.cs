@@ -29,11 +29,54 @@ partial class mainMenu
     /// </summary>
     private void InitializeComponent()
     {
-        this.components = new System.ComponentModel.Container();
-        this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-        this.ClientSize = new System.Drawing.Size(800, 450);
-        this.Text = "Form1";
+        buttonAllPosts = new Button();
+        buttonLikedPosts = new Button();
+        buttonProfile = new Button();
+        SuspendLayout();
+        // 
+        // buttonAllPosts
+        // 
+        buttonAllPosts.Location = new Point(237, 59);
+        buttonAllPosts.Name = "buttonAllPosts";
+        buttonAllPosts.Size = new Size(288, 71);
+        buttonAllPosts.TabIndex = 0;
+        buttonAllPosts.Text = "Посмотреть все посты";
+        buttonAllPosts.UseVisualStyleBackColor = true;
+        // 
+        // buttonLikedPosts
+        // 
+        buttonLikedPosts.Location = new Point(237, 151);
+        buttonLikedPosts.Name = "buttonLikedPosts";
+        buttonLikedPosts.Size = new Size(288, 71);
+        buttonLikedPosts.TabIndex = 1;
+        buttonLikedPosts.Text = "Посмотреть лайкнутые посты";
+        buttonLikedPosts.UseVisualStyleBackColor = true;
+        // 
+        // buttonProfile
+        // 
+        buttonProfile.Location = new Point(237, 250);
+        buttonProfile.Name = "buttonProfile";
+        buttonProfile.Size = new Size(288, 71);
+        buttonProfile.TabIndex = 2;
+        buttonProfile.Text = "Посмотреть профиль";
+        buttonProfile.UseVisualStyleBackColor = true;
+        // 
+        // mainMenu
+        // 
+        AutoScaleDimensions = new SizeF(10F, 25F);
+        AutoScaleMode = AutoScaleMode.Font;
+        ClientSize = new Size(800, 450);
+        Controls.Add(buttonProfile);
+        Controls.Add(buttonLikedPosts);
+        Controls.Add(buttonAllPosts);
+        Name = "mainMenu";
+        Text = "Form1";
+        ResumeLayout(false);
     }
 
     #endregion
+
+    private Button buttonAllPosts;
+    private Button buttonLikedPosts;
+    private Button buttonProfile;
 }

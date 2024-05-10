@@ -9,5 +9,6 @@ namespace SuperClient.presenters
     internal interface IregisterPresenter
     {
         public Task Register(string name, string pass);
+        public string resultRegistr {  get; set; }
     }
 }
