@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SuperAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7ef1c3cdf3ba7ad3f1af26a3436844268b58f362")]
 [assembly: System.Reflection.AssemblyProductAttribute("SuperAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SuperAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
