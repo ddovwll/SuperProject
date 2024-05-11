@@ -346,3 +346,17 @@ fabric.properties
 
 # Android studio 3.1+ serialized cache file
 .idea/caches/build_file_checksums.ser
+
+SuperAPI/bin/Debug/net8.0/SuperAPI.dll
+SuperAPI/bin/Debug/net8.0/SuperAPI.exe
+SuperAPI/bin/Debug/net8.0/SuperAPI.pdb
+SuperAPI/obj/Debug/net8.0/SuperAPI.AssemblyInfo.cs
+SuperAPI/obj/Debug/net8.0/SuperAPI.AssemblyInfoInputs.cache
+SuperAPI/obj/Debug/net8.0/SuperAPI.dll
+SuperAPI/obj/Debug/net8.0/SuperAPI.pdb
+SuperAPI/obj/Debug/net8.0/SuperAPI.sourcelink.json
+SuperAPI/obj/Debug/net8.0/apphost.exe
+SuperAPI/obj/Debug/net8.0/ref/SuperAPI.dll
+SuperAPI/obj/Debug/net8.0/refint/SuperAPI.dll
+SuperClient/obj/Debug/net8.0-windows/SuperClient.AssemblyInfo.cs
+SuperClient/obj/Debug/net8.0-windows/SuperClient.AssemblyInfoInputs.cache
