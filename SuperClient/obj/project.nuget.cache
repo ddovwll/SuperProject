@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "p37DqB8TDQTiapkDBc/t7AgZnGay7VFdtZ5oa+HAGzpQ9LBI82O/QSn6vswBGQQmgWzJve5L5MK9QxXmfN6YKw==",
+  "dgSpecHash": "OTA9qMMUFxU1COud6OnshFi8KTpF9LMFdrW94pFUySUi96BqcRIlQlEIXEskXNVNRRyT+GIjM+UtlZ6j8VydWA==",
   "success": true,
   "projectFilePath": "C:\\Users\\arish\\Documents\\GitHub\\SuperProject\\SuperClient\\SuperClient.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\arish\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

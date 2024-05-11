@@ -18,7 +18,7 @@ namespace SuperClient
         public ProfileView()
         {
             InitializeComponent();
-            presenter = new ProfilePresenter(this);
+            //presenter = new ProfilePresenter(this);
         }
 
         private void CreatePost_Click(object sender, EventArgs e)

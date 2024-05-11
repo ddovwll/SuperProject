@@ -30,7 +30,7 @@ public class LikesDAL : ILikesDAL
     public async Task<List<Post>> GetLikedPosts(int userId)
     {
         await using var db = new DBModel();
-        var likes = await db.Likes.Include(l => l.Post)
+        var likes = await db.Likes.Include(l => l.Post).Include(l=>l.Post.User)
             .Where(l => l.UserId == userId).Select(l=> l.Post).ToListAsync();
         return likes;
     }

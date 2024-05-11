@@ -35,7 +35,8 @@ public class LikesBLL(ILikesDAL likesDal, IAuth auth) : ILikesBLL
             Header = p.Header,
             Text = p.Text,
             LikesCount = p.LikesCount,
-            UserId = p.UserId
+            UserId = p.UserId,
+            UserName = p.User.NickName
         }).ToList();
         
         return posts;

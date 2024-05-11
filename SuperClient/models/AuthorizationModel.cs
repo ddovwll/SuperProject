@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SuperClient.models
 {
-    internal class ProfileModel
+    internal class AuthorizationModel
     {
         public string NickName { get; set; }
-        public int userId { get; set; }
+        public string Password { get; set; }
     }
 }
