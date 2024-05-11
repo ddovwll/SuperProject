@@ -18,7 +18,7 @@ namespace SuperClient.presenters
         public AuthorizationPresenter(IAuthorizationView view)
         {
             this.view = view;
-            result = "ok";
+            //result = "ok";
             this.model = new AuthorizationModel();
         }
 

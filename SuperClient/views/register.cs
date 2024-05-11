@@ -50,9 +50,5 @@ namespace SuperClient.views
                 textBoxPassword.Clear();
             }
         }
-
-        private void register_Load(object sender, EventArgs e)
-        {
-        }
     }
 }

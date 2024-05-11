@@ -91,7 +91,6 @@
             Controls.Add(textBoxNickName);
             Name = "register";
             Text = "register";
-            Load += register_Load;
             ResumeLayout(false);
             PerformLayout();
         }
