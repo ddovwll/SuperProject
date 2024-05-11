@@ -55,7 +55,8 @@ public class PostBLL(IPostDAL postDal, IAuth auth) : IPostBLL
             Header = p.Header,
             Text = p.Text,
             LikesCount = p.LikesCount,
-            UserId = p.UserId
+            UserId = p.UserId,
+            UserName = p.User.NickName
         }).OrderByDescending(p=>p.Id).ToList();
         return posts;
     }
@@ -72,7 +73,8 @@ public class PostBLL(IPostDAL postDal, IAuth auth) : IPostBLL
             Header = p.Header,
             Text = p.Text,
             LikesCount = p.LikesCount,
-            UserId = p.UserId
+            UserId = p.UserId,
+            UserName = p.User.NickName
         }).ToList();
         return posts;
     }
