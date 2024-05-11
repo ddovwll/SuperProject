@@ -20,5 +20,10 @@ namespace SuperClient
             InitializeComponent();
             presenter = new ProfilePresenter(this);
         }
+
+        private void CreatePost_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

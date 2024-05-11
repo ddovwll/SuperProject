@@ -8,6 +8,6 @@ namespace SuperClient.presenters
 {
     internal interface IProfilePresenter
     {
-        public Task Profile();
+        
     }
 }

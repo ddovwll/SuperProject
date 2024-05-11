@@ -10,18 +10,6 @@ namespace SuperClient.presenters
 {
     internal class ProfilePresenter: IProfilePresenter
     {
-        IProfileView view;
-        ProfileModel model;
-
-        public ProfilePresenter(IProfileView view)
-        {
-            this.view = view;
-            this.model = new ProfileModel();
-        }
-
-        public async Task Profile()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

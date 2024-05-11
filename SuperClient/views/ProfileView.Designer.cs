@@ -68,6 +68,7 @@
             CreatePost.TabIndex = 3;
             CreatePost.Text = "Опубликовать";
             CreatePost.UseVisualStyleBackColor = true;
+            CreatePost.Click += CreatePost_Click;
             // 
             // ProfileView
             // 
