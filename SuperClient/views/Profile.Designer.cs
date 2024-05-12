@@ -32,6 +32,7 @@
             NameNewPost = new TextBox();
             TextNewPost = new RichTextBox();
             CreatePost = new Button();
+            Menu = new Button();
             SuspendLayout();
             // 
             // NickName
@@ -70,16 +71,27 @@
             CreatePost.UseVisualStyleBackColor = true;
             CreatePost.Click += CreatePost_Click;
             // 
-            // ProfileView
+            // Menu
+            // 
+            Menu.Location = new Point(677, 577);
+            Menu.Name = "Menu";
+            Menu.Size = new Size(111, 29);
+            Menu.TabIndex = 4;
+            Menu.Text = "Меню";
+            Menu.UseVisualStyleBackColor = true;
+            Menu.Click += Menu_Click;
+            // 
+            // Profile
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 618);
+            Controls.Add(Menu);
             Controls.Add(CreatePost);
             Controls.Add(TextNewPost);
             Controls.Add(NameNewPost);
             Controls.Add(NickName);
-            Name = "ProfileView";
+            Name = "Profile";
             Text = "Profile";
             ResumeLayout(false);
             PerformLayout();
@@ -91,5 +103,6 @@
         private TextBox NameNewPost;
         private RichTextBox TextNewPost;
         private Button CreatePost;
+        private Button Menu;
     }
 }

@@ -16,5 +16,12 @@ namespace SuperClient.views
         {
             InitializeComponent();
         }
+
+        private void Menu_Click(object sender, EventArgs e)
+        {
+            mainMenu menu = new mainMenu();
+            menu.Show();
+            this.Hide();
+        }
     }
 }

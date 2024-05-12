@@ -22,6 +22,13 @@ namespace SuperClient.views
             presenter = new AllPostsPresenter(this);
         }
 
+        private void Menu_Click(object sender, EventArgs e)
+        {
+            mainMenu menu = new mainMenu();
+            menu.Show();
+            this.Hide();
+        }
+
         //private async void CreatePost_Click(object sender, EventArgs e)
         //{
         //    await presenter.AllPosts();

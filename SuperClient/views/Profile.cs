@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,12 +21,13 @@ namespace SuperClient
         {
             InitializeComponent();
             presenter = new ProfilePresenter(this);
+            NickName.Text = headers.header.NickName;
         }
 
         private async void CreatePost_Click(object sender, EventArgs e)
         {
             await presenter.CreatePost(NameNewPost.Text, TextNewPost.Text, headers.header.userId, headers.header.NickName);
-            
+
             if (presenter.resultAuth == "ok")
             {
                 MessageBox.Show("Пост успешно опубликован");
@@ -36,6 +38,13 @@ namespace SuperClient
                 NameNewPost.Clear();
                 TextNewPost.Clear();
             }
+        }
+
+        private void Menu_Click(object sender, EventArgs e)
+        {
+            mainMenu menu = new mainMenu();
+            menu.Show();
+            this.Hide();
         }
     }
 }
