@@ -36,39 +36,46 @@ partial class mainMenu
         // 
         // buttonAllPosts
         // 
-        buttonAllPosts.Location = new Point(237, 59);
+        buttonAllPosts.Location = new Point(190, 47);
+        buttonAllPosts.Margin = new Padding(2, 2, 2, 2);
         buttonAllPosts.Name = "buttonAllPosts";
-        buttonAllPosts.Size = new Size(288, 71);
+        buttonAllPosts.Size = new Size(230, 57);
         buttonAllPosts.TabIndex = 0;
         buttonAllPosts.Text = "Посмотреть все посты";
         buttonAllPosts.UseVisualStyleBackColor = true;
+        buttonAllPosts.Click += buttonAllPosts_Click;
         // 
         // buttonLikedPosts
         // 
-        buttonLikedPosts.Location = new Point(237, 151);
+        buttonLikedPosts.Location = new Point(190, 121);
+        buttonLikedPosts.Margin = new Padding(2, 2, 2, 2);
         buttonLikedPosts.Name = "buttonLikedPosts";
-        buttonLikedPosts.Size = new Size(288, 71);
+        buttonLikedPosts.Size = new Size(230, 57);
         buttonLikedPosts.TabIndex = 1;
         buttonLikedPosts.Text = "Посмотреть лайкнутые посты";
         buttonLikedPosts.UseVisualStyleBackColor = true;
+        buttonLikedPosts.Click += buttonLikedPosts_Click;
         // 
         // buttonProfile
         // 
-        buttonProfile.Location = new Point(237, 250);
+        buttonProfile.Location = new Point(190, 200);
+        buttonProfile.Margin = new Padding(2, 2, 2, 2);
         buttonProfile.Name = "buttonProfile";
-        buttonProfile.Size = new Size(288, 71);
+        buttonProfile.Size = new Size(230, 57);
         buttonProfile.TabIndex = 2;
         buttonProfile.Text = "Посмотреть профиль";
         buttonProfile.UseVisualStyleBackColor = true;
+        buttonProfile.Click += buttonProfile_Click;
         // 
         // mainMenu
         // 
-        AutoScaleDimensions = new SizeF(10F, 25F);
+        AutoScaleDimensions = new SizeF(8F, 20F);
         AutoScaleMode = AutoScaleMode.Font;
-        ClientSize = new Size(800, 450);
+        ClientSize = new Size(640, 360);
         Controls.Add(buttonProfile);
         Controls.Add(buttonLikedPosts);
         Controls.Add(buttonAllPosts);
+        Margin = new Padding(2, 2, 2, 2);
         Name = "mainMenu";
         Text = "Form1";
         ResumeLayout(false);

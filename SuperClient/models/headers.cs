@@ -10,8 +10,8 @@ namespace SuperClient.models
     {
         public int userId { get; set; }
         public string sessionId { get; set;}
+        public string NickName { get; set; }
 
         public static headers header = new headers();
-
     }
 }

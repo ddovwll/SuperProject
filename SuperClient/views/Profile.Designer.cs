@@ -1,6 +1,6 @@
 ﻿namespace SuperClient
 {
-    partial class ProfileView
+    partial class Profile
     {
         /// <summary>
         /// Required designer variable.

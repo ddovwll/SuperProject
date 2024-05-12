@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace SuperClient.presenters
 {
-    internal interface IProfilePresenter
+    internal interface IAllPostsPresenter
     {
-        public Task CreatePost(string header, string text, int userId, string userName);
+        public Task AllPosts();
 
         public string resultAuth { get; set; }
     }
