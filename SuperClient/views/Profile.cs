@@ -21,12 +21,12 @@ namespace SuperClient
         {
             InitializeComponent();
             presenter = new ProfilePresenter(this);
-            NickName.Text = headers.header.NickName;
+            label1.Text = headers.header.NickName;
         }
 
         private async void CreatePost_Click(object sender, EventArgs e)
         {
-            await presenter.CreatePost(NameNewPost.Text, TextNewPost.Text, headers.header.userId, headers.header.NickName);
+            await presenter.CreatePost(NameNewPost.Text, TextNewPost.Text, headers.header.userId);
 
             if (presenter.resultAuth == "ok")
             {
@@ -44,7 +44,6 @@ namespace SuperClient
         {
             mainMenu menu = new mainMenu();
             menu.Show();
-            this.Hide();
         }
     }
 }

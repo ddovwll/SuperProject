@@ -34,7 +34,6 @@ namespace SuperClient.views
                 MessageBox.Show(_headers.sessionId);
                 mainMenu menu = new mainMenu();
                 menu.Show();
-                this.Hide();
             }
             else
             {
@@ -50,7 +49,6 @@ namespace SuperClient.views
         {
             register formRegister = new register();
             formRegister.Show();
-            this.Hide();
         }
     }
 }

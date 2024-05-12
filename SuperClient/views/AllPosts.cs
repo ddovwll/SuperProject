@@ -26,23 +26,8 @@ namespace SuperClient.views
         {
             mainMenu menu = new mainMenu();
             menu.Show();
-            this.Hide();
         }
 
-        //private async void CreatePost_Click(object sender, EventArgs e)
-        //{
-        //    await presenter.AllPosts();
-
-        //    if (presenter.resultAuth == "ok")
-        //    {
-        //        // Вывод результатов запроса в RichTextBox
-        //        //richTextBox.Text = ;
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show(presenter.resultAuth);
-        //        richTextBox.Clear();
-        //    }
-        //}
+        
     }
 }

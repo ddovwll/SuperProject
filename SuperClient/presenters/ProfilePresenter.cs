@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SuperClient.presenters
 {
@@ -23,16 +24,18 @@ namespace SuperClient.presenters
 
         public string resultAuth { get => result; set => value = result; }
 
-        public async Task CreatePost(string header, string text, int userId, string userName)
+        public async Task CreatePost(string header, string text, int userId)
         {
             using HttpClient httpClient = new HttpClient();
+
+            httpClient.DefaultRequestHeaders.Add("UserId", headers.header.userId.ToString());
+            httpClient.DefaultRequestHeaders.Add("SessionId", headers.header.sessionId.ToString());
 
             var body = new
             {
                 header = model.header,
                 text = model.text,
                 userId = headers.header.userId,
-                userName = headers.header.NickName,
             };
 
             string jsonBody = JsonConvert.SerializeObject(body);

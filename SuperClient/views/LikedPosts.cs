@@ -21,7 +21,6 @@ namespace SuperClient.views
         {
             mainMenu menu = new mainMenu();
             menu.Show();
-            this.Hide();
         }
     }
 }

@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            NickName = new Label();
+            label1 = new Label();
             NameNewPost = new TextBox();
             TextNewPost = new RichTextBox();
             CreatePost = new Button();
             Menu = new Button();
             SuspendLayout();
             // 
-            // NickName
+            // label1
             // 
-            NickName.AutoSize = true;
-            NickName.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            NickName.Location = new Point(12, 9);
-            NickName.Name = "NickName";
-            NickName.Size = new Size(117, 46);
-            NickName.TabIndex = 0;
-            NickName.Text = "label1";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(117, 46);
+            label1.TabIndex = 0;
+            label1.Text = "label1";
             // 
             // NameNewPost
             // 
@@ -90,7 +90,7 @@
             Controls.Add(CreatePost);
             Controls.Add(TextNewPost);
             Controls.Add(NameNewPost);
-            Controls.Add(NickName);
+            Controls.Add(label1);
             Name = "Profile";
             Text = "Profile";
             ResumeLayout(false);
@@ -99,7 +99,7 @@
 
         #endregion
 
-        private Label NickName;
+        private Label label1;
         private TextBox NameNewPost;
         private RichTextBox TextNewPost;
         private Button CreatePost;

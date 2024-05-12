@@ -8,7 +8,7 @@ namespace SuperClient.presenters
 {
     internal interface IProfilePresenter
     {
-        public Task CreatePost(string header, string text, int userId, string userName);
+        public Task CreatePost(string header, string text, int userId);
 
         public string resultAuth { get; set; }
     }

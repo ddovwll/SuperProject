@@ -63,7 +63,7 @@ namespace SuperClient.presenters
                     // Сохранение данных сессии в заголовках для последующих запросов
                     headers.header.sessionId = _headers.sessionId;
                     headers.header.userId = _headers.userId;
-                    headers.header.NickName = _headers.NickName;
+                    headers.header.NickName = body.nickName;
                     result = "ok";
                     break;
                 // Другие возможные коды состояния...

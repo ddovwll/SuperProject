@@ -36,7 +36,6 @@ namespace SuperClient.views
                     MessageBox.Show("Аккаунт успешно зарегистрирован");
                     Authorization auth = new Authorization();
                     auth.Show();
-                    this.Hide();
                 }
                 else
                 {
