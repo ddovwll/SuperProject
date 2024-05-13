@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SuperClient.models
 {
-    internal class Post
+    public class Post
     {
         public int id { get; set; }
         public string header { get; set; }

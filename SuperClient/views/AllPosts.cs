@@ -31,14 +31,13 @@ namespace SuperClient.views
             menu.Show();
         }
 
-        private async void LoadPosts()
+        public async void LoadPosts()
         {
             List<Post> posts = await presenter.AllPosts();
-            LikesHistory.Initialize();
             DisplayPosts(posts);
         }
 
-        private void DisplayPosts(List<Post> posts)
+        public void DisplayPosts(List<Post> posts)
         {
             // Очистить существующие элементы управления
             flowLayoutPanelPosts.Controls.Clear();
@@ -94,16 +93,16 @@ namespace SuperClient.views
                 btnLike.Click += (sender, e) =>
                 {
                     // Если пост еще не лайкнут пользователем, лайкаем и увеличиваем счетчик
-                    if (!post.IsLiked)
+                    if (post.IsLiked != true)
                     {
-                        LikesHistory.LikePost(post.id);
+                        presenter.CreateLike(post.id);
                         post.likesCount++;
                         post.IsLiked = true;
                     }
                     // Иначе снимаем лайк и уменьшаем счетчик
                     else
                     {
-                        LikesHistory.UnlikePost(post.id);
+                        presenter.DeleteLike(post.id);
                         post.likesCount--;
                         post.IsLiked = false;
                     }
@@ -121,7 +120,7 @@ namespace SuperClient.views
             flowLayoutPanelPosts.PerformLayout();
         }
 
-        private void UpdateLikeButton(Button btnLike, Post post)
+        public void UpdateLikeButton(Button btnLike, Post post)
         {
             // Установить изображение и цвет кнопки в зависимости от состояния лайка
             if (post.IsLiked)
@@ -136,7 +135,7 @@ namespace SuperClient.views
             }
         }
 
-        private Image ResizeImage(Image imgToResize, int width, int height)
+        public Image ResizeImage(Image imgToResize, int width, int height)
         {
             Bitmap bmp = new Bitmap(width, height);
             using (Graphics g = Graphics.FromImage((Image)bmp))

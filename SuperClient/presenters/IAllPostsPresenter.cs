@@ -10,7 +10,8 @@ namespace SuperClient.presenters
     internal interface IAllPostsPresenter
     {
         public Task<List<Post>> AllPosts();
-
+        public Task CreateLike(int postId);
+        public Task DeleteLike(int postId);
         public string resultAuth { get; set; }
     }
 }

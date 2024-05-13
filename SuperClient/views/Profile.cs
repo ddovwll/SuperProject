@@ -24,10 +24,9 @@ namespace SuperClient
             presenter = new ProfilePresenter(this);
             label1.Text = headers.header.NickName;
             LoadPosts();
-            LikesHistory.Initialize();
         }
 
-        private async void CreatePost_Click(object sender, EventArgs e)
+        public async void CreatePost_Click(object sender, EventArgs e)
         {
             await presenter.CreatePost(NameNewPost.Text, TextNewPost.Text, headers.header.userId);
 
@@ -50,13 +49,13 @@ namespace SuperClient
             menu.Show();
         }
 
-        private async void LoadPosts()
+        public async void LoadPosts()
         {
             List<Post> posts = await presenter.UserPosts(headers.header.NickName);
             DisplayPosts(posts);
         }
 
-        private void DisplayPosts(List<Post> posts)
+        public void DisplayPosts(List<Post> posts)
         {
             // Очищаем RichTextBox от предыдущих постов
             UserPosts.Clear();

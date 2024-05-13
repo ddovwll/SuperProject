@@ -55,5 +55,69 @@ namespace SuperClient.presenters
 
             return null;
         }
+
+        public async Task CreateLike(int postId) // добавление лайка
+        {
+            using HttpClient httpClient = new HttpClient();
+
+            httpClient.DefaultRequestHeaders.Add("UserId", headers.header.userId.ToString());
+            httpClient.DefaultRequestHeaders.Add("SessionId", headers.header.sessionId.ToString());
+
+            var response = await httpClient.PostAsync("http://localhost:5221/likes/" + postId.ToString(), null);
+
+            int statusCode = (int)response.StatusCode;
+
+            switch (statusCode)
+            {
+                case 401:
+                    result = "отсутствует один из заголовков или id пользователя не соответствует id сессии";
+                    // Unauthorized 
+                    break;
+                case 409:
+                    result = "На посте уже стоит лайк";
+                    // Conflict  
+                    break;
+                case 200:
+                    result = "ok";
+                    break;
+                // Другие возможные коды состояния...
+                default:
+                    result = "ошибка";
+                    // Обработка других кодов состояния
+                    break;
+            }
+        }
+
+        public async Task DeleteLike(int postId) // удаление лайка
+        {
+            using HttpClient httpClient = new HttpClient();
+
+            httpClient.DefaultRequestHeaders.Add("UserId", headers.header.userId.ToString());
+            httpClient.DefaultRequestHeaders.Add("SessionId", headers.header.sessionId.ToString());
+
+            var response = await httpClient.DeleteAsync("http://localhost:5221/likes/" + postId.ToString());
+
+            int statusCode = (int)response.StatusCode;
+
+            switch (statusCode)
+            {
+                case 401:
+                    result = "отсутствует один из заголовков или id пользователя не соответствует id сессии";
+                    // Unauthorized 
+                    break;
+                case 409:
+                    result = "На посте не стоит лайк";
+                    // Conflict
+                    break;
+                case 200:
+                    result = "ok";
+                    break;
+                // Другие возможные коды состояния...
+                default:
+                    result = "ошибка";
+                    // Обработка других кодов состояния
+                    break;
+            }
+        }
     }
 }
