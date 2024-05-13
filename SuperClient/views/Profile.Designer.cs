@@ -33,6 +33,8 @@
             TextNewPost = new RichTextBox();
             CreatePost = new Button();
             Menu = new Button();
+            label2 = new Label();
+            UserPosts = new RichTextBox();
             SuspendLayout();
             // 
             // label1
@@ -47,7 +49,7 @@
             // 
             // NameNewPost
             // 
-            NameNewPost.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            NameNewPost.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             NameNewPost.Location = new Point(12, 78);
             NameNewPost.Name = "NameNewPost";
             NameNewPost.Size = new Size(125, 34);
@@ -81,11 +83,31 @@
             Menu.UseVisualStyleBackColor = true;
             Menu.Click += Menu_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            label2.Location = new Point(12, 295);
+            label2.Name = "label2";
+            label2.Size = new Size(165, 38);
+            label2.TabIndex = 6;
+            label2.Text = "Мои посты";
+            // 
+            // UserPosts
+            // 
+            UserPosts.Location = new Point(12, 336);
+            UserPosts.Name = "UserPosts";
+            UserPosts.Size = new Size(776, 120);
+            UserPosts.TabIndex = 7;
+            UserPosts.Text = "";
+            // 
             // Profile
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 618);
+            Controls.Add(UserPosts);
+            Controls.Add(label2);
             Controls.Add(Menu);
             Controls.Add(CreatePost);
             Controls.Add(TextNewPost);
@@ -104,5 +126,7 @@
         private RichTextBox TextNewPost;
         private Button CreatePost;
         private Button Menu;
+        private Label label2;
+        private RichTextBox UserPosts;
     }
 }

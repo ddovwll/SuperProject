@@ -28,21 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            richTextBox = new RichTextBox();
             Menu = new Button();
+            label2 = new Label();
+            flowLayoutPanelPosts = new FlowLayoutPanel();
             SuspendLayout();
-            // 
-            // richTextBox
-            // 
-            richTextBox.Location = new Point(12, 12);
-            richTextBox.Name = "richTextBox";
-            richTextBox.Size = new Size(830, 131);
-            richTextBox.TabIndex = 0;
-            richTextBox.Text = "";
             // 
             // Menu
             // 
-            Menu.Location = new Point(748, 149);
+            Menu.Location = new Point(748, 600);
             Menu.Name = "Menu";
             Menu.Size = new Size(94, 29);
             Menu.TabIndex = 1;
@@ -50,21 +43,41 @@
             Menu.UseVisualStyleBackColor = true;
             Menu.Click += Menu_Click;
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Italic, GraphicsUnit.Point, 204);
+            label2.Location = new Point(12, 9);
+            label2.Name = "label2";
+            label2.Size = new Size(105, 38);
+            label2.TabIndex = 7;
+            label2.Text = "Лента";
+            // 
+            // flowLayoutPanelPosts
+            // 
+            flowLayoutPanelPosts.AutoScroll = true;
+            flowLayoutPanelPosts.Location = new Point(12, 50);
+            flowLayoutPanelPosts.Name = "flowLayoutPanelPosts";
+            flowLayoutPanelPosts.Size = new Size(829, 544);
+            flowLayoutPanelPosts.TabIndex = 8;
+            // 
             // AllPosts
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(854, 641);
+            ClientSize = new Size(853, 641);
+            Controls.Add(flowLayoutPanelPosts);
+            Controls.Add(label2);
             Controls.Add(Menu);
-            Controls.Add(richTextBox);
             Name = "AllPosts";
             Text = "AllPosts";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private RichTextBox richTextBox;
         private Button Menu;
+        private Label label2;
+        private FlowLayoutPanel flowLayoutPanelPosts;
     }
 }

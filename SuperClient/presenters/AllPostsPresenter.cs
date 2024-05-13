@@ -21,9 +21,12 @@ namespace SuperClient.presenters
 
         public string resultAuth { get => result; set => value = result; }
 
-        public async Task AllPosts()
+        public async Task<List<Post>> AllPosts() // все посты
         {
             using HttpClient httpClient = new HttpClient();
+
+            httpClient.DefaultRequestHeaders.Add("UserId", headers.header.userId.ToString());
+            httpClient.DefaultRequestHeaders.Add("SessionId", headers.header.sessionId.ToString());
 
             var response = await httpClient.GetAsync("http://localhost:5221/post/all");
 
@@ -33,19 +36,24 @@ namespace SuperClient.presenters
             {
                 case 401:
                     result = "отсутствует один из заголовков или id пользователя не соответствует id сессии";
-                    // BadRequest
+                    // Unauthorized 
                     break;
                 case 200:
-                    // Чтение содержимого ответа
-                    string data = await response.Content.ReadAsStringAsync();
+                    // Получение данных из ответа
+                    var data = await response.Content.ReadAsStringAsync();
 
+                    // Десериализация JSON данных в объект List<Post>
+                    var posts = JsonConvert.DeserializeObject<List<Post>>(data);
                     result = "ok";
-                    break;
+                    return posts;
+                // Другие возможные коды состояния...
                 default:
                     result = "ошибка";
                     // Обработка других кодов состояния
                     break;
             }
+
+            return null;
         }
     }
 }
