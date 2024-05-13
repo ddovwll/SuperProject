@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -126,13 +127,24 @@ namespace SuperClient.views
             if (post.IsLiked)
             {
                 btnLike.BackColor = Color.LightGreen; // Зеленый цвет, если пост лайкнут
-                //btnLike.Image = Image.FromFile(filePathRedHeart);
+                btnLike.Image = ResizeImage(Image.FromFile("C:/Users/arish/Documents/GitHub/SuperProject/SuperClient/Resources/red_heart.png"), 20, 20);
             }
             else
             {
                 btnLike.BackColor = Color.White; // Белый цвет, если пост не лайкнут
-                //btnLike.Image = Image.FromFile(filePathBlackHeart);
+                btnLike.Image = ResizeImage(Image.FromFile("C:/Users/arish/Documents/GitHub/SuperProject/SuperClient/Resources/black_heart.png"), 20, 20);
             }
+        }
+
+        private Image ResizeImage(Image imgToResize, int width, int height)
+        {
+            Bitmap bmp = new Bitmap(width, height);
+            using (Graphics g = Graphics.FromImage((Image)bmp))
+            {
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g.DrawImage(imgToResize, 0, 0, width, height);
+            }
+            return (Image)bmp;
         }
     }
 }
