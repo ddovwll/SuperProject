@@ -11,5 +11,6 @@ namespace SuperClient.views
     {
         public void LoadPosts();
         public void DisplayPosts(List<Post> posts);
+        public Image ResizeImage(Image imgToResize, int width, int height);
     }
 }

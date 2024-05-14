@@ -91,6 +91,24 @@ namespace SuperClient
                 rtbText.SelectionAlignment = HorizontalAlignment.Left; // Выравнивание по левому краю
                 flowLayoutPanelUserPosts.Controls.Add(rtbText);
 
+                // Создать метку для отображения лайков поста
+                System.Windows.Forms.Label lbLikes = new System.Windows.Forms.Label();
+                lbLikes.BackColor = Color.CornflowerBlue;
+                lbLikes.AutoSize = false;
+                lbLikes.Image = ResizeImage(Image.FromFile("C:/Users/arish/Documents/GitHub/SuperProject/SuperClient/Resources/red_heart.png"), 20, 20);
+                lbLikes.ImageAlign = ContentAlignment.MiddleLeft; // Выравниваем картинку по левому краю
+                lbLikes.TextAlign = ContentAlignment.MiddleCenter; // Выравниваем текст по центру
+                lbLikes.Text = post.likesCount.ToString();
+
+                flowLayoutPanelUserPosts.Controls.Add(lbLikes);
+
+                // Создать панель для размещения кнопок (чтобы они располагались рядом друг с другом, а не одна под другой)
+                FlowLayoutPanel buttonPanel = new FlowLayoutPanel();
+                buttonPanel.FlowDirection = FlowDirection.LeftToRight;
+                buttonPanel.AutoSize = true;
+                buttonPanel.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+                flowLayoutPanelUserPosts.Controls.Add(buttonPanel);
+
                 // Создать кнопку "изменить"
                 Button btnUpdate = new Button();
                 btnUpdate.Text = "Изменить";
@@ -150,8 +168,8 @@ namespace SuperClient
                     }
                 };
 
-                // Добавить кнопку изменения к контейнеру поста
-                flowLayoutPanelUserPosts.Controls.Add(btnUpdate);
+                // Добавить кнопку изменения к панели
+                buttonPanel.Controls.Add(btnUpdate);
 
                 // Создать кнопку "удалить"
                 Button btnDelete = new Button();
@@ -177,8 +195,8 @@ namespace SuperClient
                     }
                 };
 
-                // Добавить кнопку удаления к контейнеру поста
-                flowLayoutPanelUserPosts.Controls.Add(btnDelete);
+                // Добавить кнопку удаления к панели
+                buttonPanel.Controls.Add(btnDelete);
             }
 
             // Обновить макет для обновления полос прокрутки
