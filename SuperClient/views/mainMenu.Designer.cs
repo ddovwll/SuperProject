@@ -90,6 +90,7 @@ partial class mainMenu
         Controls.Add(buttonProfile);
         Controls.Add(buttonLikedPosts);
         Controls.Add(buttonAllPosts);
+        Icon = (Icon)resources.GetObject("$this.Icon");
         Margin = new Padding(2);
         Name = "mainMenu";
         Text = "Form1";

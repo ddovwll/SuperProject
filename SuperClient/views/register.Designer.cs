@@ -108,6 +108,7 @@
             Controls.Add(buttonRegistration);
             Controls.Add(textBoxPassword);
             Controls.Add(textBoxNickName);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(2);
             Name = "register";
             Text = "register";

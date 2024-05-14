@@ -84,6 +84,7 @@
             Controls.Add(flowLayoutPanelPosts);
             Controls.Add(label2);
             Controls.Add(Menu);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AllPosts";
             Text = "AllPosts";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

@@ -128,6 +128,7 @@
             Controls.Add(TextNewPost);
             Controls.Add(NameNewPost);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Profile";
             Text = "Profile";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
