@@ -123,7 +123,7 @@ public class PostController(IPostBLL postBll) : ControllerBase
     [HttpGet("/post/all")]
     public async Task<IActionResult> GetPosts()
     {
-        List<PostQueryModel> posts;
+        List<PostQMWithLike> posts;
         try
         {
             posts = await postBll.GetPosts(Request.Headers["UserId"], Request.Headers["SessionId"]);

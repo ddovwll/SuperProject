@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SuperAPI.DAL.Models;
+using SuperAPI.DAL.QueryModels;
 
 namespace SuperAPI.DAL;
 
@@ -51,5 +52,16 @@ public class PostDAL : IPostDAL
         await using var db = new DBModel();
         var posts = await db.Posts.Include("User").Where(p=>p.User.NickName == nickname).ToListAsync();
         return posts;
+    }
+
+    public async Task CheckLike(int userId, PostQMWithLike post)
+    {
+        await using var db = new DBModel();
+        var like = new Likes()
+        {
+            PostId = post.Id,
+            UserId = userId
+        };
+        post.IsLiked = await db.Likes.ContainsAsync(like);
     }
 }
