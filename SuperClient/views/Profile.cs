@@ -72,6 +72,7 @@ namespace SuperClient
                 tbTitle.ReadOnly = true;
                 tbTitle.BorderStyle = BorderStyle.None; // Убрать границы 
                 tbTitle.Width = 800; // Фиксированная ширина
+                tbTitle.BackColor = Color.CornflowerBlue;
                 tbTitle.Font = new Font("Segoe UI", 12, FontStyle.Italic);
                 tbTitle.TextAlign = HorizontalAlignment.Left; // Выравнивание по левому краю
                 flowLayoutPanelUserPosts.Controls.Add(tbTitle);
@@ -84,6 +85,7 @@ namespace SuperClient
                 rtbText.BorderStyle = BorderStyle.None; // Убрать границы ричтекстбокса
                 rtbText.WordWrap = true; // Переносить слова по нужности
                 rtbText.Width = 800; // Фиксированная ширина
+                rtbText.BackColor = Color.CornflowerBlue;
                 int textHeight = TextRenderer.MeasureText(rtbText.Text, rtbText.Font, new Size(rtbText.Width, int.MaxValue), TextFormatFlags.WordBreak).Height;
                 rtbText.Height = textHeight + 5; // 5 - дополнительный отступ
                 rtbText.SelectionAlignment = HorizontalAlignment.Left; // Выравнивание по левому краю
@@ -94,7 +96,7 @@ namespace SuperClient
                 btnUpdate.Text = "Изменить";
                 btnUpdate.AutoSize = true;
                 btnUpdate.TextImageRelation = TextImageRelation.ImageBeforeText; // Установить изображение перед текстом
-                btnUpdate.BackColor = Color.Yellow;
+                btnUpdate.BackColor = Color.SkyBlue;
                 btnUpdate.Image = ResizeImage(Image.FromFile("C:/Users/arish/Documents/GitHub/SuperProject/SuperClient/Resources/pen.png"), 20, 20);
 
                 post.IsUpdated = false; // до нажатия кнопки изменения пост не изменен
@@ -110,6 +112,8 @@ namespace SuperClient
                         // открываем для изменения заголовок и текст поста
                         tbTitle.ReadOnly = false;
                         rtbText.ReadOnly = false;
+                        tbTitle.BackColor = Color.White;
+                        rtbText.BackColor = Color.White;
 
                         post.IsUpdated = true;
                     }
@@ -139,6 +143,8 @@ namespace SuperClient
                         // закрываем для изменения заголовок и текст поста
                         tbTitle.ReadOnly = true;
                         rtbText.ReadOnly = true;
+                        tbTitle.BackColor = Color.CornflowerBlue;
+                        rtbText.BackColor = Color.CornflowerBlue;
 
                         btnUpdate.Text = "Изменить";
                     }
@@ -152,7 +158,7 @@ namespace SuperClient
                 btnDelete.Text = "Удалить";
                 btnDelete.AutoSize = true;
                 btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText; // Установить изображение перед текстом
-                btnDelete.BackColor = Color.Red;
+                btnDelete.BackColor = Color.Crimson;
                 btnDelete.Image = ResizeImage(Image.FromFile("C:/Users/arish/Documents/GitHub/SuperProject/SuperClient/Resources/garbage.png"), 20, 20);
 
                 // Создать обработчик события для кнопки "удалить"

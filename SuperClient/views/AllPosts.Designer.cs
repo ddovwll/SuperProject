@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AllPosts));
             Menu = new Button();
             label2 = new Label();
             flowLayoutPanelPosts = new FlowLayoutPanel();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // Menu
@@ -61,16 +64,29 @@
             flowLayoutPanelPosts.Size = new Size(829, 544);
             flowLayoutPanelPosts.TabIndex = 8;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(123, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 46);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
             // AllPosts
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.CornflowerBlue;
             ClientSize = new Size(853, 641);
+            Controls.Add(pictureBox1);
             Controls.Add(flowLayoutPanelPosts);
             Controls.Add(label2);
             Controls.Add(Menu);
             Name = "AllPosts";
             Text = "AllPosts";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -79,5 +95,6 @@
         private Button Menu;
         private Label label2;
         private FlowLayoutPanel flowLayoutPanelPosts;
+        private PictureBox pictureBox1;
     }
 }

@@ -53,6 +53,7 @@ namespace SuperClient.views
                 tbUsername.ReadOnly = true;
                 tbUsername.BorderStyle = BorderStyle.None; // Убрать границы 
                 tbUsername.Font = new Font("Segoe UI", 14, FontStyle.Bold);
+                tbUsername.BackColor = Color.CornflowerBlue;
                 tbUsername.Width = 800; // Фиксированная ширина
                 tbUsername.TextAlign = HorizontalAlignment.Left; // Выравнивание по левому краю
                 flowLayoutPanelPosts.Controls.Add(tbUsername);
@@ -64,6 +65,7 @@ namespace SuperClient.views
                 tbTitle.BorderStyle = BorderStyle.None; // Убрать границы 
                 tbTitle.Width = 800; // Фиксированная ширина
                 tbTitle.Font = new Font("Segoe UI", 12, FontStyle.Italic);
+                tbTitle.BackColor = Color.CornflowerBlue;
                 tbTitle.TextAlign = HorizontalAlignment.Left; // Выравнивание по левому краю
                 flowLayoutPanelPosts.Controls.Add(tbTitle);
 
@@ -75,6 +77,7 @@ namespace SuperClient.views
                 rtbText.BorderStyle = BorderStyle.None; // Убрать границы ричтекстбокса
                 rtbText.WordWrap = true; // Переносить слова по нужности
                 rtbText.Width = 800; // Фиксированная ширина
+                rtbText.BackColor = Color.CornflowerBlue;
                 int textHeight = TextRenderer.MeasureText(rtbText.Text, rtbText.Font, new Size(rtbText.Width, int.MaxValue), TextFormatFlags.WordBreak).Height;
                 rtbText.Height = textHeight + 5; // 5 - дополнительный отступ
                 rtbText.SelectionAlignment = HorizontalAlignment.Left; // Выравнивание по левому краю
@@ -125,7 +128,7 @@ namespace SuperClient.views
             // Установить изображение и цвет кнопки в зависимости от состояния лайка
             if (post.IsLiked)
             {
-                btnLike.BackColor = Color.LightGreen; // Зеленый цвет, если пост лайкнут
+                btnLike.BackColor = Color.Pink; // Розовый цвет, если пост лайкнут
                 btnLike.Image = ResizeImage(Image.FromFile("C:/Users/arish/Documents/GitHub/SuperProject/SuperClient/Resources/red_heart.png"), 20, 20);
             }
             else

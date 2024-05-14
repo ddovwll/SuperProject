@@ -33,7 +33,7 @@
             // 
             // Menu
             // 
-            Menu.Location = new Point(694, 409);
+            Menu.Location = new Point(747, 600);
             Menu.Name = "Menu";
             Menu.Size = new Size(94, 29);
             Menu.TabIndex = 0;
@@ -45,7 +45,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.CornflowerBlue;
+            ClientSize = new Size(853, 641);
             Controls.Add(Menu);
             Name = "LikedPosts";
             Text = "LikedPosts";

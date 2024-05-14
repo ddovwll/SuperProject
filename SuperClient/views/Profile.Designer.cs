@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Profile));
             label1 = new Label();
             NameNewPost = new TextBox();
             TextNewPost = new RichTextBox();
@@ -35,6 +36,8 @@
             Menu = new Button();
             label2 = new Label();
             flowLayoutPanelUserPosts = new FlowLayoutPanel();
+            pictureBox1 = new PictureBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -52,7 +55,7 @@
             NameNewPost.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 204);
             NameNewPost.Location = new Point(12, 78);
             NameNewPost.Name = "NameNewPost";
-            NameNewPost.Size = new Size(125, 34);
+            NameNewPost.Size = new Size(666, 34);
             NameNewPost.TabIndex = 1;
             // 
             // TextNewPost
@@ -101,11 +104,23 @@
             flowLayoutPanelUserPosts.Size = new Size(829, 258);
             flowLayoutPanelUserPosts.TabIndex = 7;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(12, 596);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 46);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
+            // 
             // Profile
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.CornflowerBlue;
             ClientSize = new Size(853, 641);
+            Controls.Add(pictureBox1);
             Controls.Add(flowLayoutPanelUserPosts);
             Controls.Add(label2);
             Controls.Add(Menu);
@@ -115,6 +130,7 @@
             Controls.Add(label1);
             Name = "Profile";
             Text = "Profile";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -128,5 +144,6 @@
         private Button Menu;
         private Label label2;
         private FlowLayoutPanel flowLayoutPanelUserPosts;
+        private PictureBox pictureBox1;
     }
 }
