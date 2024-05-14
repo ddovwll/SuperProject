@@ -168,7 +168,7 @@ namespace SuperClient.presenters
             string jsonBody = JsonConvert.SerializeObject(body);
             var content = new StringContent(jsonBody, Encoding.UTF8, "application/json");
 
-            var response = await httpClient.PostAsync("http://localhost:5221/post/update", content);
+            var response = await httpClient.PutAsync("http://localhost:5221/post/update", content);
 
             int statusCode = (int)response.StatusCode;
 
@@ -191,7 +191,6 @@ namespace SuperClient.presenters
 
                     result = "ok";
                     break;
-                // Другие возможные коды состояния...
                 default:
                     result = "ошибка";
                     // Обработка других кодов состояния

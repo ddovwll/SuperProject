@@ -34,7 +34,7 @@
             CreatePost = new Button();
             Menu = new Button();
             label2 = new Label();
-            UserPosts = new RichTextBox();
+            flowLayoutPanelUserPosts = new FlowLayoutPanel();
             SuspendLayout();
             // 
             // label1
@@ -59,7 +59,7 @@
             // 
             TextNewPost.Location = new Point(12, 118);
             TextNewPost.Name = "TextNewPost";
-            TextNewPost.Size = new Size(776, 120);
+            TextNewPost.Size = new Size(829, 120);
             TextNewPost.TabIndex = 2;
             TextNewPost.Text = "";
             // 
@@ -75,7 +75,7 @@
             // 
             // Menu
             // 
-            Menu.Location = new Point(677, 577);
+            Menu.Location = new Point(730, 600);
             Menu.Name = "Menu";
             Menu.Size = new Size(111, 29);
             Menu.TabIndex = 4;
@@ -93,20 +93,20 @@
             label2.TabIndex = 6;
             label2.Text = "Мои посты";
             // 
-            // UserPosts
+            // flowLayoutPanelUserPosts
             // 
-            UserPosts.Location = new Point(12, 336);
-            UserPosts.Name = "UserPosts";
-            UserPosts.Size = new Size(776, 120);
-            UserPosts.TabIndex = 7;
-            UserPosts.Text = "";
+            flowLayoutPanelUserPosts.AutoScroll = true;
+            flowLayoutPanelUserPosts.Location = new Point(12, 336);
+            flowLayoutPanelUserPosts.Name = "flowLayoutPanelUserPosts";
+            flowLayoutPanelUserPosts.Size = new Size(829, 258);
+            flowLayoutPanelUserPosts.TabIndex = 7;
             // 
             // Profile
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 618);
-            Controls.Add(UserPosts);
+            ClientSize = new Size(853, 641);
+            Controls.Add(flowLayoutPanelUserPosts);
             Controls.Add(label2);
             Controls.Add(Menu);
             Controls.Add(CreatePost);
@@ -127,6 +127,6 @@
         private Button CreatePost;
         private Button Menu;
         private Label label2;
-        private RichTextBox UserPosts;
+        private FlowLayoutPanel flowLayoutPanelUserPosts;
     }
 }

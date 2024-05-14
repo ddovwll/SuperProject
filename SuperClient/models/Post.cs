@@ -15,5 +15,6 @@ namespace SuperClient.models
         public int userId { get; set; }
         public string userName { get; set; }
         public bool IsLiked { get; set; }
+        public bool IsUpdated { get; set; }
     }
 }
