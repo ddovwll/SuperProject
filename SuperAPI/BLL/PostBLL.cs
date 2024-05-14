@@ -45,11 +45,11 @@ public class PostBLL(IPostDAL postDal, IAuth auth) : IPostBLL
         return postFromDb;
     }
 
-    public async Task<List<PostQueryModel>> GetPosts(StringValues userId, StringValues sessionId)
+    public async Task<List<PostQMWithLike>> GetPosts(StringValues userId, StringValues sessionId)
     {
         await auth.CheckSession(userId, sessionId);
         var postsFromDb = await postDal.GetPosts();
-        var posts = postsFromDb.Select(p => new PostQueryModel()
+        var posts = postsFromDb.Select(p => new PostQMWithLike()
         {
             Id = p.Id,
             Header = p.Header,
@@ -58,6 +58,13 @@ public class PostBLL(IPostDAL postDal, IAuth auth) : IPostBLL
             UserId = p.UserId,
             UserName = p.User.NickName
         }).OrderByDescending(p=>p.Id).ToList();
+        var tasks = new List<Task>();
+        foreach (var post in posts)
+        {
+            tasks.Add(postDal.CheckLike(int.Parse(userId), post));
+        }
+
+        await Task.WhenAll(tasks);
         return posts;
     }
 
