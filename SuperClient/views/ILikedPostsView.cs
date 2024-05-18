@@ -8,5 +8,6 @@ namespace SuperClient.views
 {
     internal interface ILikedPostsView
     {
+
     }
 }
