@@ -95,7 +95,7 @@ namespace SuperClient
                 System.Windows.Forms.Label lbLikes = new System.Windows.Forms.Label();
                 lbLikes.BackColor = Color.CornflowerBlue;
                 lbLikes.AutoSize = false;
-                lbLikes.Image = ResizeImage(Image.FromFile("C:/Users/arish/Documents/GitHub/SuperProject/SuperClient/Resources/red_heart.png"), 20, 20);
+                lbLikes.Image = ResizeImage(Image.FromFile("Resources/images/red_heart.png"), 20, 20);
                 lbLikes.ImageAlign = ContentAlignment.MiddleLeft; // Выравниваем картинку по левому краю
                 lbLikes.TextAlign = ContentAlignment.MiddleCenter; // Выравниваем текст по центру
                 lbLikes.Text = post.likesCount.ToString();
@@ -115,7 +115,7 @@ namespace SuperClient
                 btnUpdate.AutoSize = true;
                 btnUpdate.TextImageRelation = TextImageRelation.ImageBeforeText; // Установить изображение перед текстом
                 btnUpdate.BackColor = Color.SkyBlue;
-                btnUpdate.Image = ResizeImage(Image.FromFile("C:/Users/arish/Documents/GitHub/SuperProject/SuperClient/Resources/pen.png"), 20, 20);
+                btnUpdate.Image = ResizeImage(Image.FromFile("Resources/images/pen.png"), 20, 20);
 
                 post.IsUpdated = false; // до нажатия кнопки изменения пост не изменен
 
@@ -177,7 +177,7 @@ namespace SuperClient
                 btnDelete.AutoSize = true;
                 btnDelete.TextImageRelation = TextImageRelation.ImageBeforeText; // Установить изображение перед текстом
                 btnDelete.BackColor = Color.Crimson;
-                btnDelete.Image = ResizeImage(Image.FromFile("C:/Users/arish/Documents/GitHub/SuperProject/SuperClient/Resources/garbage.png"), 20, 20);
+                btnDelete.Image = ResizeImage(Image.FromFile("Resources/images/garbage.png"), 20, 20);
 
                 // Создать обработчик события для кнопки "удалить"
                 btnDelete.Click += async (sender, e) =>
