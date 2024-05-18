@@ -31,10 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LikedPosts));
             Menu = new Button();
             pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
-            richTextBox1 = new RichTextBox();
-            textBox2 = new TextBox();
-            button1 = new Button();
+            label1 = new Label();
             flowLayoutPanelLickedPost = new FlowLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -61,43 +58,23 @@
             pictureBox1.TabIndex = 10;
             pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // label1
             // 
-            textBox1.Location = new Point(27, 30);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(126, 23);
-            textBox1.TabIndex = 11;
-            // 
-            // richTextBox1
-            // 
-            richTextBox1.Location = new Point(27, 68);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(685, 96);
-            richTextBox1.TabIndex = 12;
-            richTextBox1.Text = "";
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(186, 30);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(100, 23);
-            textBox2.TabIndex = 13;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(27, 183);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 14;
-            button1.Text = "лайк";
-            button1.UseVisualStyleBackColor = true;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Italic);
+            label1.Location = new Point(12, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(248, 30);
+            label1.TabIndex = 11;
+            label1.Text = "Понравившиеся посты";
             // 
             // flowLayoutPanelLickedPost
             // 
-            flowLayoutPanelLickedPost.Location = new Point(12, 12);
+            flowLayoutPanelLickedPost.AutoScroll = true;
+            flowLayoutPanelLickedPost.Location = new Point(12, 42);
             flowLayoutPanelLickedPost.Name = "flowLayoutPanelLickedPost";
-            flowLayoutPanelLickedPost.Size = new Size(722, 427);
-            flowLayoutPanelLickedPost.TabIndex = 15;
+            flowLayoutPanelLickedPost.Size = new Size(722, 397);
+            flowLayoutPanelLickedPost.TabIndex = 12;
             // 
             // LikedPosts
             // 
@@ -105,18 +82,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CornflowerBlue;
             ClientSize = new Size(746, 481);
-            Controls.Add(button1);
-            Controls.Add(textBox2);
-            Controls.Add(richTextBox1);
-            Controls.Add(textBox1);
+            Controls.Add(label1);
+            Controls.Add(flowLayoutPanelLickedPost);
             Controls.Add(pictureBox1);
             Controls.Add(Menu);
-            Controls.Add(flowLayoutPanelLickedPost);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "LikedPosts";
             Text = "LikedPosts";
-            Load += LikedPosts_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -126,10 +99,7 @@
 
         private Button Menu;
         private PictureBox pictureBox1;
-        private TextBox textBox1;
-        private RichTextBox richTextBox1;
-        private TextBox textBox2;
-        private Button button1;
+        private Label label1;
         private FlowLayoutPanel flowLayoutPanelLickedPost;
     }
 }
