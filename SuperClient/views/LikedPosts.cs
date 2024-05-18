@@ -1,4 +1,5 @@
 ﻿using SuperClient.presenters;
+using SuperClient.models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,27 +9,30 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Drawing2D;
 
 namespace SuperClient.views
 {
     public partial class LikedPosts : Form, ILikedPostsView
     {
-        private readonly ILikedPostsPresenter presenter;
-
+        private readonly LikedPostsPresenter presenter;
         public LikedPosts()
         {
             InitializeComponent();
-            presenter = new ILikedPostsPresenter(this);
-            LikedPosts();
+            presenter = new LikedPostsPresenter(this);
+            LoadPosts();
         }
-
         private void Menu_Click(object sender, EventArgs e)
         {
             mainMenu menu = new mainMenu();
             menu.Show();
         }
-
-        public void DisplayPosts(List<LikedPosts> posts)
+        public async void LoadPosts()
+        {
+            List<Post> posts = await presenter.LikedPosts();
+            DisplayPosts(posts);
+        }
+        public void DisplayPosts(List<Post> posts)
         {
             // Очистить существующие элементы управления
             flowLayoutPanelLickedPost.Controls.Clear();
@@ -79,51 +83,36 @@ namespace SuperClient.views
                 btnLike.Text = post.likesCount.ToString();
                 btnLike.AutoSize = true;
                 btnLike.TextImageRelation = TextImageRelation.ImageBeforeText; // Установить изображение перед текстом
-
-                // Установить изображение и цвет кнопки в зависимости от состояния лайка
-                UpdateLikeButton(btnLike, post);
+                btnLike.BackColor = Color.Pink; // Розовый цвет, если пост лайкнут
+                btnLike.Image = ResizeImage(Image.FromFile("Resources/images/red_heart.png"), 20, 20);
 
                 // Создать обработчик события для кнопки лайка
                 btnLike.Click += (sender, e) =>
                 {
-                    // Если пост еще не лайкнут пользователем, лайкаем и увеличиваем счетчик
-                    if (post.IsLiked != true)
-                    {
-                        presenter.CreateLike(post.id);
-                        post.likesCount++;
-                        post.IsLiked = true;
-                    }
-                    // Иначе снимаем лайк и уменьшаем счетчик
-                    else
-                    {
-                        presenter.DeleteLike(post.id);
-                        post.likesCount--;
-                        post.IsLiked = false;
-                    }
-
-                    // Обновляем текст кнопки и изображение в зависимости от состояния лайка
-                    btnLike.Text = post.likesCount.ToString();
-                    UpdateLikeButton(btnLike, post);
+                    presenter.DeleteLike(post.id);
+                    post.likesCount--;
+                    post.IsLiked = false;
+                    LoadPosts();
                 };
-
                 // Добавить кнопку лайка к контейнеру поста
                 flowLayoutPanelLickedPost.Controls.Add(btnLike);
             }
-
             // Обновить макет для обновления полос прокрутки
             flowLayoutPanelLickedPost.PerformLayout();
         }
-
-
-
-        private void LikedPosts_Load(object sender, EventArgs e)
+       
+        public Image ResizeImage(Image imgToResize, int width, int height) //размер
         {
-
+            Bitmap bmp = new Bitmap(width, height);
+            using (Graphics g = Graphics.FromImage((Image)bmp))
+            {
+                g.InterpolationMode = InterpolationMode.HighQualityBicubic;
+                g.DrawImage(imgToResize, 0, 0, width, height);
+            }
+            return (Image)bmp;
         }
 
-        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
 
-        }
+
     }
 }
