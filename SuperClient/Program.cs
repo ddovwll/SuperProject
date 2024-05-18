@@ -16,4 +16,5 @@ static class Program
 
         Application.Run(new Authorization());
     }
+    //Resources\images\black_heart.png"
 }
