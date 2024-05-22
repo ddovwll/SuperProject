@@ -13,17 +13,23 @@ public partial class mainMenu : Form
     {
         AllPosts allPosts = new AllPosts();
         allPosts.Show();
+        this.Hide();
+        this.Dispose();
     }
 
     private void buttonLikedPosts_Click(object sender, EventArgs e)
     {
         LikedPosts likedPosts = new LikedPosts();
         likedPosts.Show();
+        this.Hide();
     }
 
     private void buttonProfile_Click(object sender, EventArgs e)
     {
         Profile profile = new Profile();
         profile.Show();
+        this.Hide();
     }
+    
+    public void OnFormClosed(object sender, EventArgs e) => Authorization.mainForm.Close();
 }

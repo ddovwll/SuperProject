@@ -93,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
+            this.Closed += OnFormClosed;
         }
 
         #endregion

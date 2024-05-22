@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,11 +18,13 @@ namespace SuperClient.views
     public partial class Authorization : Form, IAuthorizationView
     {
         private readonly IAuthorizationPresenter presenter;
-
+        public static Form mainForm;
+        
         public Authorization()
         {
             InitializeComponent();
             presenter = new AuthorizationPresenter(this);
+            mainForm = this;
         }
 
         private async void buttonAuthorization_Click(object sender, EventArgs e)
@@ -34,6 +37,7 @@ namespace SuperClient.views
                 //MessageBox.Show(_headers.sessionId);
                 mainMenu menu = new mainMenu();
                 menu.Show();
+                this.Hide();
             }
             else
             {
@@ -41,7 +45,6 @@ namespace SuperClient.views
                 textBoxName.Clear();
                 textBoxPassword.Clear();
             }
-
             //MessageBox.Show(_headers.sessionId);
         }
 

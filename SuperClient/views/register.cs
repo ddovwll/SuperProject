@@ -34,8 +34,10 @@ namespace SuperClient.views
                 if (presenter.resultRegistr == "ok")
                 {
                     MessageBox.Show("Аккаунт успешно зарегистрирован");
-                    Authorization auth = new Authorization();
+                    Form auth = Authorization.mainForm;
                     auth.Show();
+                    this.Hide();
+                    this.Dispose();
                 }
                 else
                 {
@@ -49,5 +51,7 @@ namespace SuperClient.views
                 textBoxPassword.Clear();
             }
         }
+        
+        public void OnFormClosed(object sender, EventArgs e) => Authorization.mainForm.Close();
     }
 }

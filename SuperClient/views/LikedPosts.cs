@@ -26,6 +26,8 @@ namespace SuperClient.views
         {
             mainMenu menu = new mainMenu();
             menu.Show();
+            this.Hide();
+            this.Dispose();
         }
         public async void LoadPosts()
         {
@@ -84,12 +86,12 @@ namespace SuperClient.views
                 btnLike.AutoSize = true;
                 btnLike.TextImageRelation = TextImageRelation.ImageBeforeText; // Установить изображение перед текстом
                 btnLike.BackColor = Color.Pink; // Розовый цвет, если пост лайкнут
-                btnLike.Image = ResizeImage(Image.FromFile("Resources/images/red_heart.png"), 20, 20);
+                btnLike.Image = ResizeImage(Image.FromFile("C:\\Users\\user\\RiderProjects\\SuperProject\\SuperClient\\Resources\\images\\red_heart.png"), 20, 20);
 
                 // Создать обработчик события для кнопки лайка
-                btnLike.Click += (sender, e) =>
+                btnLike.Click += async (sender, e) =>
                 {
-                    presenter.DeleteLike(post.id);
+                    await presenter.DeleteLike(post.id);
                     post.likesCount--;
                     post.IsLiked = false;
                     LoadPosts();
@@ -111,8 +113,7 @@ namespace SuperClient.views
             }
             return (Image)bmp;
         }
-
-
-
+        
+        public void OnFormClosed(object sender, EventArgs e) => Authorization.mainForm.Close();
     }
 }
