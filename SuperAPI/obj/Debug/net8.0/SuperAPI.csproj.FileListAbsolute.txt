@@ -37,3 +37,42 @@ C:\Users\arish\Documents\GitHub\SuperProject\SuperAPI\obj\Debug\net8.0\refint\Su
 C:\Users\arish\Documents\GitHub\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.pdb
 C:\Users\arish\Documents\GitHub\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.genruntimeconfig.cache
 C:\Users\arish\Documents\GitHub\SuperProject\SuperAPI\obj\Debug\net8.0\ref\SuperAPI.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\appsettings.json
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\SuperAPI.exe
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\SuperAPI.deps.json
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\SuperAPI.runtimeconfig.json
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\SuperAPI.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\SuperAPI.pdb
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\Npgsql.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.csproj.AssemblyReference.cache
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.AssemblyInfoInputs.cache
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.AssemblyInfo.cs
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.csproj.CoreCompileInputs.cache
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.sourcelink.json
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\staticwebassets\msbuild.SuperAPI.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\staticwebassets\msbuild.build.SuperAPI.props
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.SuperAPI.props
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.SuperAPI.props
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\scopedcss\bundle\SuperAPI.styles.css
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.csproj.CopyComplete
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\refint\SuperAPI.dll
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.pdb
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\SuperAPI.genruntimeconfig.cache
+C:\Users\Ирина\OneDrive\Рабочий стол\клон\SuperProject\SuperAPI\obj\Debug\net8.0\ref\SuperAPI.dll

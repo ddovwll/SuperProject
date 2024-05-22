@@ -9,26 +9,25 @@ using System.Threading.Tasks;
 
 namespace SuperClient.presenters
 {
-    internal class AllPostsPresenter : IAllPostsPresenter
+    internal class LikedPostsPresenter
     {
-        IAllPostsView view;
+        ILikedPostsView view;
         string result;
 
-        public AllPostsPresenter(IAllPostsView view)
+        public LikedPostsPresenter(ILikedPostsView view)
         {
             this.view = view;
         }
-
         public string resultAuth { get => result; set => value = result; }
 
-        public async Task<List<Post>> AllPosts() // все посты
+        public async Task<List<Post>> LikedPosts() // все посты
         {
             using HttpClient httpClient = new HttpClient();
 
             httpClient.DefaultRequestHeaders.Add("UserId", headers.header.userId.ToString());
             httpClient.DefaultRequestHeaders.Add("SessionId", headers.header.sessionId.ToString());
 
-            var response = await httpClient.GetAsync("http://localhost:5221/post/all");
+            var response = await httpClient.GetAsync("http://localhost:5221/likes");
 
             int statusCode = (int)response.StatusCode;
 
@@ -52,42 +51,8 @@ namespace SuperClient.presenters
                     // Обработка других кодов состояния
                     break;
             }
-
             return null;
         }
-
-        public async Task CreateLike(int postId) // добавление лайка (я люблю арину!)
-        {
-            using HttpClient httpClient = new HttpClient();
-
-            httpClient.DefaultRequestHeaders.Add("UserId", headers.header.userId.ToString());
-            httpClient.DefaultRequestHeaders.Add("SessionId", headers.header.sessionId.ToString());
-
-            var response = await httpClient.PostAsync("http://localhost:5221/likes/" + postId.ToString(), null);
-
-            int statusCode = (int)response.StatusCode;
-
-            switch (statusCode)
-            {
-                case 401:
-                    result = "отсутствует один из заголовков или id пользователя не соответствует id сессии";
-                    // Unauthorized 
-                    break;
-                case 409:
-                    result = "На посте уже стоит лайк";
-                    // Conflict  
-                    break;
-                case 200:
-                    result = "ok";
-                    break;
-                // Другие возможные коды состояния...
-                default:
-                    result = "ошибка";
-                    // Обработка других кодов состояния
-                    break;
-            }
-        }
-
         public async Task DeleteLike(int postId) // удаление лайка
         {
             using HttpClient httpClient = new HttpClient();
@@ -112,12 +77,13 @@ namespace SuperClient.presenters
                 case 200:
                     result = "ok";
                     break;
-                // Другие возможные коды состояния...
+                // Другие возможные коды состояния
                 default:
                     result = "ошибка";
                     // Обработка других кодов состояния
                     break;
             }
         }
+
     }
 }
