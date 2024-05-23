@@ -56,7 +56,7 @@ namespace SuperClient.presenters
             return null;
         }
 
-        public async Task CreateLike(int postId) // добавление лайка
+        public async Task CreateLike(int postId) // добавление лайка (я люблю арину!)
         {
             using HttpClient httpClient = new HttpClient();
 

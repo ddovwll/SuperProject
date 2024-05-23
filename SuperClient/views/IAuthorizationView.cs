@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SuperClient.views
 {
-    internal interface IAuthorizationView
+    public interface IAuthorizationView
     {
     }
 }

@@ -38,9 +38,10 @@
             // 
             // Menu
             // 
-            Menu.Location = new Point(748, 600);
+            Menu.Location = new Point(654, 450);
+            Menu.Margin = new Padding(3, 2, 3, 2);
             Menu.Name = "Menu";
-            Menu.Size = new Size(94, 29);
+            Menu.Size = new Size(82, 22);
             Menu.TabIndex = 1;
             Menu.Text = "Меню";
             Menu.UseVisualStyleBackColor = true;
@@ -50,46 +51,51 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 16.2F, FontStyle.Italic, GraphicsUnit.Point, 204);
-            label2.Location = new Point(12, 9);
+            label2.Location = new Point(10, 7);
             label2.Name = "label2";
-            label2.Size = new Size(105, 38);
+            label2.Size = new Size(82, 30);
             label2.TabIndex = 7;
             label2.Text = "Лента";
             // 
             // flowLayoutPanelPosts
             // 
             flowLayoutPanelPosts.AutoScroll = true;
-            flowLayoutPanelPosts.Location = new Point(12, 50);
+            flowLayoutPanelPosts.Location = new Point(10, 38);
+            flowLayoutPanelPosts.Margin = new Padding(3, 2, 3, 2);
             flowLayoutPanelPosts.Name = "flowLayoutPanelPosts";
-            flowLayoutPanelPosts.Size = new Size(829, 544);
+            flowLayoutPanelPosts.Size = new Size(725, 408);
             flowLayoutPanelPosts.TabIndex = 8;
+            flowLayoutPanelPosts.Paint += flowLayoutPanelPosts_Paint;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(123, 5);
+            pictureBox1.Location = new Point(108, 4);
+            pictureBox1.Margin = new Padding(3, 2, 3, 2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(44, 46);
+            pictureBox1.Size = new Size(38, 34);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 9;
             pictureBox1.TabStop = false;
             // 
             // AllPosts
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.CornflowerBlue;
-            ClientSize = new Size(853, 641);
+            ClientSize = new Size(746, 481);
             Controls.Add(pictureBox1);
             Controls.Add(flowLayoutPanelPosts);
             Controls.Add(label2);
             Controls.Add(Menu);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "AllPosts";
             Text = "AllPosts";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
+            this.Closed += OnFormClosed;
         }
 
         #endregion
