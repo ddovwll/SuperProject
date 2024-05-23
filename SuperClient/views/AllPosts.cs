@@ -131,12 +131,12 @@ namespace SuperClient.views
             if (post.IsLiked)
             {
                 btnLike.BackColor = Color.Pink; // Розовый цвет, если пост лайкнут
-                btnLike.Image = ResizeImage(Image.FromFile("C:\\Users\\user\\RiderProjects\\SuperProject\\SuperClient\\Resources\\images\\red_heart.png"), 20, 20);
+                btnLike.Image = ResizeImage(Image.FromFile("C:\\Users\\arish\\Documents\\GitHub\\SuperProject\\Resources\\images\\red_heart.png"), 20, 20);
             }
             else
             {
                 btnLike.BackColor = Color.White; // Белый цвет, если пост не лайкнут
-                btnLike.Image = ResizeImage(Image.FromFile("C:\\Users\\user\\RiderProjects\\SuperProject\\SuperClient\\Resources\\images\\black_heart.png"), 20, 20);
+                btnLike.Image = ResizeImage(Image.FromFile("C:\\Users\\arish\\Documents\\GitHub\\SuperProject\\Resources\\images\\black_heart.png"), 20, 20);
             }
         }
 
@@ -149,11 +149,6 @@ namespace SuperClient.views
                 g.DrawImage(imgToResize, 0, 0, width, height);
             }
             return (Image)bmp;
-        }
-
-        private void flowLayoutPanelPosts_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         public void OnFormClosed(object sender, EventArgs e) => Authorization.mainForm.Close();

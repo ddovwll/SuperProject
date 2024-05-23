@@ -65,7 +65,6 @@
             flowLayoutPanelPosts.Name = "flowLayoutPanelPosts";
             flowLayoutPanelPosts.Size = new Size(725, 408);
             flowLayoutPanelPosts.TabIndex = 8;
-            flowLayoutPanelPosts.Paint += flowLayoutPanelPosts_Paint;
             // 
             // pictureBox1
             // 

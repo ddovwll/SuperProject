@@ -30,7 +30,6 @@ namespace SuperClient.views
             {
                 await presenter.Register(textBoxNickName.Text, textBoxPassword.Text);
                 var _headers = headers.header;
-                //MessageBox.Show(presenter.resultRegistr);
                 if (presenter.resultRegistr == "ok")
                 {
                     MessageBox.Show("Аккаунт успешно зарегистрирован");

@@ -34,7 +34,6 @@ namespace SuperClient.views
             if (presenter.resultAuth == "ok")
             {
                 MessageBox.Show("Вы выполнили вход в аккаунт nickname: " + textBoxName.Text);
-                //MessageBox.Show(_headers.sessionId);
                 mainMenu menu = new mainMenu();
                 menu.Show();
                 this.Hide();
@@ -45,7 +44,6 @@ namespace SuperClient.views
                 textBoxName.Clear();
                 textBoxPassword.Clear();
             }
-            //MessageBox.Show(_headers.sessionId);
         }
 
         private void buttonRegister_Click(object sender, EventArgs e)
