@@ -86,7 +86,7 @@ namespace SuperClient.views
                 btnLike.AutoSize = true;
                 btnLike.TextImageRelation = TextImageRelation.ImageBeforeText; // Установить изображение перед текстом
                 btnLike.BackColor = Color.Pink; // Розовый цвет, если пост лайкнут
-                btnLike.Image = ResizeImage(Image.FromFile("C:\\Users\\user\\RiderProjects\\SuperProject\\SuperClient\\Resources\\images\\red_heart.png"), 20, 20);
+                btnLike.Image = ResizeImage(Image.FromFile("C:\\university\\ТП\\ЛР3\\SuperProject\\SuperClient\\Resources\\images\\red_heart.png"), 20, 20);
 
                 // Создать обработчик события для кнопки лайка
                 btnLike.Click += async (sender, e) =>

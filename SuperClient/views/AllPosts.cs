@@ -131,12 +131,12 @@ namespace SuperClient.views
             if (post.IsLiked)
             {
                 btnLike.BackColor = Color.Pink; // Розовый цвет, если пост лайкнут
-                btnLike.Image = ResizeImage(Image.FromFile("C:\\Users\\user\\RiderProjects\\SuperProject\\SuperClient\\Resources\\images\\red_heart.png"), 20, 20);
+                btnLike.Image = ResizeImage(Image.FromFile("C:\\university\\ТП\\ЛР3\\SuperProject\\SuperClient\\Resources\\images\\red_heart.png"), 20, 20);
             }
             else
             {
                 btnLike.BackColor = Color.White; // Белый цвет, если пост не лайкнут
-                btnLike.Image = ResizeImage(Image.FromFile("C:\\Users\\user\\RiderProjects\\SuperProject\\SuperClient\\Resources\\images\\black_heart.png"), 20, 20);
+                btnLike.Image = ResizeImage(Image.FromFile("C:\\university\\ТП\\ЛР3\\SuperProject\\SuperClient\\Resources\\images\\black_heart.png"), 20, 20);
             }
         }
 
